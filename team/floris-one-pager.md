@@ -5,7 +5,7 @@
 ## Your part
 | When | What | Time |
 |---|---|---|
-| Weekly | A 15-30 min recorded chat with [B2B lead]: the sector, Stairpay stories, a number or two | 25 min |
+| Wednesdays | A 30 min recorded content chat with [B2B lead]: pick next week's posts from the ideas board, then talk through the sector, Stairpay stories, a number or two | 30 min |
 | 4-5 times a week | A Slack DM with a draft: **Approve**, **Edit** or **Reject**, within 24h | 1-2 min each |
 | After approving | Post it on LinkedIn yourself (link in the first comment), then tap **I've posted it** and paste the link | 2 min |
 | Most mornings | A DM with 3-5 posts worth commenting on, each with a suggested comment. Copy, tweak, post, tap ✅ | 5 min |
@@ -22,7 +22,7 @@ Every edit you make is saved and studied. Each month your voice file is updated 
 
 ## What would help most this week
 1. **Your LinkedIn data export:** Settings & Privacy > Data privacy > Get a copy of your data > "Download larger data archive". It gives us every post and comment you've written, so the drafts sound like you from day one.
-2. **20 minutes this week** for the first recorded chat.
+2. **30 minutes on Wednesday** for the first recorded content chat.
 3. Your view on the income caps announcement: a draft is ready to go.
 
 Questions or changes: tell [B2B lead]. You can always reject a draft or say "not this topic".

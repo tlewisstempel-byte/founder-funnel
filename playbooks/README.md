@@ -21,7 +21,7 @@ All timings and tactics here are **hypotheses to test**, not facts. The log reco
 | Thu | Story / people | |
 | Mon or Fri | Product, partner proof or a second data post | A light community or cause post |
 
-**Weekly cycle:** the ideas board digest arrives Wednesday morning; the founder content review is on Wednesday; posts picked there are drafted, approved and scheduled into the next week's slots.
+**Weekly cycle:** the ideas board digest arrives Wednesday morning; the founder content review (the weekly Floris chat, same meeting) is on Wednesday; posts picked there are drafted, approved and scheduled into the next week's slots.
 
 Aim to publish in UK working-hour mornings. Move slots to match news. Review reach by slot after 6 weeks.
 

@@ -27,12 +27,13 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | Bot storage: SQLite locally for testing, Firestore on Cloud Run; swappable in `store.py`. | Claude, owner agreed |
 | 2026-10-28 | Owner creates a free test Slack workspace this week; bot is tested there before Stairpay's Slack. | |
 | 2026-10-28 | Team voices: ask Tim and Sinead for their full LinkedIn exports as well as a short intake form. | Owner |
-| 2026-10-28 | Founder content review is every Wednesday. The ideas board digest lands Wednesday morning, before the review; posts picked there fill the next weekly cycle. | Owner. Open: is this the same session as the weekly Floris meeting? |
+| 2026-10-28 | Founder content review is every Wednesday. The ideas board digest lands Wednesday morning, before the review; posts picked there fill the next weekly cycle. | Owner |
 | 2026-10-28 | One ideas board for all sources (inbox, meeting, news scanner, data, calendar). The scanner adds ideas daily but only pings for urgent, fast-lane items. | Board home (Notion vs Obsidian/Slack) to confirm |
 | 2026-10-28 | Ideas board lives in Notion (team view) + Slack (Wednesday digest with picks); the bot's log is the source of truth, Notion is a one-way mirror. | Owner asked for both mocked up |
 | 2026-10-28 | News scanner sources: GOV.UK search feeds + Google News RSS searches (covers trade press headlines). No scraping. | `config/sources.yaml` |
 | 2026-10-28 | 24h approval reminder deprioritised. | Owner |
 | 2026-10-28 | Notion currently connected to the WRONG workspace (Captain Scarlet Content Hub): test page only, to delete; reconnect to Stairpay's workspace. | Owner |
+| 2026-10-28 | The Wednesday founder content review IS the weekly Floris chat: one 25-30 min meeting that picks next week's posts and captures raw material. | Owner. Agenda in `meetings/README.md` |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)

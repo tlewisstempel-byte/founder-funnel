@@ -40,7 +40,7 @@ Trends / watchlist ──────┘        ▲                             
 |---|---|---|
 | SQL insights | Weekly job runs saved queries against anonymised views (see `data/DATA_CONTRACT.md`) and proposes ideas ("what changed, what is notable") | Zero for the team once built |
 | Team inbox | A Slack channel or form: anyone drops an observation, quote, win | Seconds |
-| Floris meeting | Weekly 15-30 min recording, transcribed, split into ideas and draft angles | Zero extra for Floris |
+| Floris meeting | Wednesday 30 min content chat (also where next week's posts are picked), recorded, transcribed, split into ideas | Zero extra for Floris |
 | Company calendar | Launches, hires, events, partner dates in a simple file or sheet | Low |
 | Trends | See section 9 | Zero once built |
 
