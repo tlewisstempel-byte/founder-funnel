@@ -1,0 +1,9 @@
+# DUMMY DATA: layout example only. Real figures come from the anonymised feed.
+type: column
+eyebrow: "Stairpay data"
+headline: "Homes on Stairpay, by quarter"
+subhead: "Example layout with dummy numbers"
+labels: ["Q1 25", "Q2 25", "Q3 25", "Q4 25", "Q1 26", "Q2 26", "Q3 26"]
+values: [4200, 6100, 8800, 12400, 17900, 23500, 31200]
+unit: ""
+source: "DUMMY DATA · Anonymised, aggregated Stairpay platform data · period · n = …"

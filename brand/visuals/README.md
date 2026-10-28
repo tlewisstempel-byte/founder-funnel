@@ -1,0 +1,29 @@
+# On-brand visuals
+
+Charts and cards for Floris's posts, rendered by code from real numbers using `brand/tokens.json` and Poppins (`brand/fonts/`, open font licence). Output: 1080x1350 PNG (LinkedIn 4:5) plus alt text to paste into LinkedIn.
+
+```bash
+founder-engine visual brand/visuals/examples/column-growth.yaml out.png
+```
+
+| Type | Use for | Example |
+|---|---|---|
+| `column` | One measure over time or across groups (data posts) | `examples/column-growth.png` |
+| `line` | Trends; up to 4 series | `examples/line-staircasing.png` |
+| `stat` | One number that carries the post | `examples/stat-caps.png` |
+| `quote` | Floris's exact words (from a transcript, with his OK) | `examples/quote.png` |
+
+The example charts use **dummy numbers** and say so.
+
+## Spec fields
+- All: `eyebrow` (pill above the headline), `headline`, `subhead`, `source` (always state source, period and sample size)
+- `column`: `labels`, `values`, `unit` (`£`, `%` or blank), optional `highlight` (index; defaults to the last column)
+- `line`: `x_labels`, `series` (name: values), `unit`
+- `stat`: `value` (as it should read, e.g. "£110k"), `label`, `context`
+- `quote`: `quote`, `who`
+
+## Rules (from the design kit and the data-viz checks)
+- One series: indigo (iris-600) with one violet (iris-400) highlight. Several series, in this order: iris-400, rice-500, powder-400, slate-300. This set passed the colour-blind, lightness and contrast checks on 2026-10-28. More than 4 series: fold into "Other" or split the chart.
+- Columns start at zero. One axis only. Selective labels (highlight, latest, maximum), not a number on every bar.
+- A legend whenever there are 2+ series, plus direct end labels.
+- Every published figure must trace to an approved, anonymised query (`data/DATA_CONTRACT.md`). Never use an image model for charts.

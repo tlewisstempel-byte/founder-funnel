@@ -13,6 +13,7 @@ dependencies = [
 [project.optional-dependencies]
 firestore = ["google-cloud-firestore>=2.16"]
 dev = ["pytest>=8"]
+visuals = ["playwright>=1.40"]  # then: playwright install chromium
 
 [project.scripts]
 founder-engine = "founder_engine.cli:main"

@@ -5,6 +5,8 @@
   founder-engine edits-summary [--month 2026-11]
                                      write voice/edits/YYYY-MM.md from Floris's edits (monthly job)
   founder-engine check               validate config files without connecting to anything
+  founder-engine visual SPEC.yaml OUT.png
+                                     render an on-brand chart/stat/quote card (see brand/visuals/README.md)
 """
 
 from __future__ import annotations
@@ -26,7 +28,21 @@ def main(argv: list[str] | None = None) -> int:
     d.add_argument("--n", type=int, default=3)
     e = sub.add_parser("edits-summary")
     e.add_argument("--month", default="")
+    v = sub.add_parser("visual")
+    v.add_argument("spec")
+    v.add_argument("out")
     args = p.parse_args(argv)
+
+    if args.cmd == "visual":
+        from pathlib import Path
+
+        import yaml
+
+        from .visuals import render_spec
+
+        path, alt = render_spec(yaml.safe_load(Path(args.spec).read_text()), Path(args.out))
+        print(f"Wrote {path}\nAlt text (paste into LinkedIn): {alt}")
+        return 0
 
     if args.cmd == "check":
         team, funnels = load_team(), load_funnels()

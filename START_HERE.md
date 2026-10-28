@@ -24,7 +24,8 @@ Phase 0-1 (2026-10-28). Slack bot code is built and tested with simulated Slack 
    - `BACKLOG.md`: what is being shipped now; `drafts/`: post drafts; `prompts/`: prompts to hand-run in any LLM
 10. `COLLABORATION.md`: how several LLMs and devices work on this at once (git + Obsidian). **Read before editing.**
 11. `sessions/`: handoff notes; read the latest three
-12. `docs/SLACK_BOT.md`: the Slack bot (what it does, setup, code map); code in `src/founder_engine/`, tests in `tests/`
+12. `meetings/` (weekly Floris meeting kit), `team/` (intake for Tim and Sinead, one-pager for Floris), `brand/visuals/` (chart and card generator)
+13. `docs/SLACK_BOT.md`: the Slack bot (what it does, setup, code map); code in `src/founder_engine/`, tests in `tests/`
 
 ## Hard rules (never break these)
 
