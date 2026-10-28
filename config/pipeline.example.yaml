@@ -1,0 +1,57 @@
+# Example configuration. Copy to pipeline.yaml (not committed) and fill in.
+# Secrets are NOT stored here: they come from environment variables / the cloud secret store.
+
+timezone: Europe/London
+
+cadence:
+  posts_per_week: [4, 5]        # alternate weeks
+  buffer_target: 8              # approved or ready drafts kept in reserve
+  approval_sla_hours: 24
+
+slots:                          # starting hypothesis; see playbooks/README.md
+  tue: data_post
+  wed: policy_take
+  thu: story_bts
+  mon_or_fri: product_or_partner
+
+llm:
+  provider: anthropic           # swappable: change provider and key only
+  model: SET_ME                 # set from current provider docs
+  max_variants: 2
+
+inputs:
+  sql:
+    enabled: false              # turn on once the anonymised feed exists
+    source: SET_ME
+    min_cohort_size: 10         # proposal, to be agreed
+  team_inbox:
+    enabled: true
+    channel: SET_ME
+  meeting_transcripts:
+    enabled: true
+    location: SET_ME
+  calendar:
+    enabled: true
+    location: SET_ME
+
+outputs:
+  slack:
+    enabled: true
+    approvals_channel: SET_ME
+    dm_team: true
+  notion:
+    enabled: false              # read-only mirror, later
+  google_docs:
+    enabled: false
+
+team:
+  founder: floris
+  amplifiers: [tim, sinead, b2b_lead]
+
+visuals:
+  brand_tokens: brand/tokens.json
+  font: Poppins
+  image_model: none             # optional, abstract imagery only
+
+storage:
+  database: firestore           # or postgres

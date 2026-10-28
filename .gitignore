@@ -1,0 +1,11 @@
+.env
+config/pipeline.yaml
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# Obsidian: ignore personal state, keep shared settings
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
