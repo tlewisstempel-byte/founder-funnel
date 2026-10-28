@@ -10,6 +10,15 @@ Goal: several LLMs (and humans) can work on this project at the same time, on on
 4. `.obsidian/` settings that are personal (workspace, cache) are git-ignored; shared ones are not.
 5. Use **one sync method only** for this folder. If the vault is on iCloud, Dropbox or Obsidian Sync, keep the repo outside the synced area or exclude it; mixing git with a file-sync service can corrupt `.git`.
 
+## How GitHub and the Obsidian vault are linked
+
+- **GitHub** (`tlewisstempel-byte/founder-funnel`) is the master copy.
+- **The vault folder** (`Documents/Obsidian/founder-funnel` on the owner's Mac) is a git clone of it, with GitHub as its `origin`. Obsidian simply displays the files in that folder; it doesn't store its own copy.
+- **Changes flow through GitHub:** whoever changes something commits and pushes to GitHub; every other copy pulls from GitHub. Nothing syncs by itself unless the Obsidian Git plugin is installed (it can pull, commit and push on a timer).
+- **Claude in the cloud** pushes to GitHub, then updates the vault folder directly through the desktop app link (it can't log in to GitHub from the Mac, so it hands the Mac the new commits as a git bundle and fast-forwards). If the Mac is offline, the vault catches up on the next `git pull`.
+
+**Every session, without exception:** pull first; commit and push to GitHub when done; then make sure the vault folder is updated. Never leave work only in a chat or only in one copy.
+
 ## Rules for every LLM and human
 
 1. **Pull before you start, push when you stop.** `git pull --rebase`, then work, then commit and `git push`.
