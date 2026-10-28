@@ -255,7 +255,7 @@ def column_chart(card: Card, labels: list[str], values: list[float], out: Path, 
     path = render_png(card_html(card, f'<div class="card">{svg}</div>', t, root), out)
     hi = highlight if highlight is not None else len(values) - 1
     alt = (f"Column chart: {card.headline}. " + "; ".join(f"{l}: {fmt_value(v, unit)}" for l, v in zip(labels, values))
-           + f". Highlighted: {labels[hi]}. Source: {card.source}")
+           + f". Highlighted: {labels[hi]}. Source: {_src(card.source)}")
     return path, alt
 
 
@@ -266,7 +266,7 @@ def line_chart(card: Card, x_labels: list[str], series: dict[str, list[float]], 
     legend = [(n, t[c]) for n, c in zip(series, CATEGORICAL)] if len(series) > 1 else None
     path = render_png(card_html(card, f'<div class="card">{svg}</div>', t, root, legend), out)
     alt = f"Line chart: {card.headline}, {x_labels[0]} to {x_labels[-1]}. " + "; ".join(
-        f"{n}: {fmt_value(v[0], unit)} to {fmt_value(v[-1], unit)}" for n, v in series.items()) + f". Source: {card.source}"
+        f"{n}: {fmt_value(v[0], unit)} to {fmt_value(v[-1], unit)}" for n, v in series.items()) + f". Source: {_src(card.source)}"
     return path, alt
 
 
@@ -275,7 +275,7 @@ def stat_card(card: Card, value: str, label: str, out: Path, context: str = "", 
     body = (f'<div class="card"><div class="stat">{_esc(value)}</div><div class="stat-label">{_esc(label)}</div>'
             + (f'<div class="stat-context">{_esc(context)}</div>' if context else "") + "</div>")
     path = render_png(card_html(card, body, t, root), out)
-    return path, f"{value} {label}. {context} Source: {card.source}".strip()
+    return path, f"{value} {label}. {context} Source: {_src(card.source)}".strip()
 
 
 def quote_card(quote: str, who: str, out: Path, source: str = "", root: Path = REPO_ROOT) -> tuple[Path, str]:
@@ -284,6 +284,11 @@ def quote_card(quote: str, who: str, out: Path, source: str = "", root: Path = R
             f'<div class="quote">{_esc(quote)}</div><div class="who">{_esc(who)}</div></div>')
     path = render_png(card_html(Card(source=source), body, t, root, dark=True), out)
     return path, f"Quote: “{quote}” — {who}"
+
+
+def _src(source: str) -> str:
+    s = source.strip()
+    return s[len("source:"):].strip() if s.lower().startswith("source:") else s
 
 
 def render_spec(spec: dict, out: Path, root: Path = REPO_ROOT) -> tuple[Path, str]:
