@@ -1,0 +1,6 @@
+.git
+.obsidian
+*.db
+.env
+__pycache__
+tests

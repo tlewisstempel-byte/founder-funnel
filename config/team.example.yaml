@@ -1,0 +1,29 @@
+# Copy to config/team.yaml (git-ignored) and fill in Slack member IDs.
+# Find an ID in Slack: click a person's name > View full profile > ⋯ > Copy member ID.
+# Channel IDs: open the channel > channel name at the top > the ID is at the bottom of the About tab.
+owner:
+  key: b2b_lead
+  name: B2B lead
+  role: B2B marketing lead
+  slack_id: U00000OWNER
+founder:
+  key: floris
+  name: Floris
+  role: Founder
+  slack_id: U0000FLORIS
+amplifiers:
+  - key: tim
+    name: Tim
+    role: CPO (product angles)
+    slack_id: U000000TIM
+  - key: sinead
+    name: Sinead
+    role: B2C marketing (shared-owner angles)
+    slack_id: U00000SINEAD
+  - key: b2b_lead
+    name: B2B lead
+    role: B2B marketing (sector and buyer angles)
+    slack_id: U00000OWNER
+channels:
+  inbox: C0000INBOX        # #content-inbox: anyone drops ideas here
+  comment_queue: C000QUEUE # #comment-queue: B2B lead drops posts for Floris to comment on

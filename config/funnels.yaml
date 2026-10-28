@@ -1,0 +1,17 @@
+# Team amplification per post type. Mirrors the "Team funnel" tables in playbooks/.
+# If you change a playbook, change this file too (and vice versa).
+# action: comment | repost_with_comment
+funnels:
+  data-post:
+    - {who: b2b_lead, action: comment, window_minutes: 60, note: "Add a sector angle"}
+    - {who: tim, action: comment, window_minutes: 60, note: "Add a product or workflow angle"}
+    - {who: sinead, action: comment, window_minutes: 60, note: "Add the shared-owner perspective"}
+  policy-take:
+    - {who: b2b_lead, action: comment, window_minutes: 60, note: "Add a provider-side angle"}
+  story-bts: []
+  product-launch:
+    - {who: tim, action: repost_with_comment, window_minutes: 60, note: "Repost with your own 2-3 lines"}
+    - {who: b2b_lead, action: repost_with_comment, window_minutes: 60, note: "Repost with your own 2-3 lines"}
+    - {who: sinead, action: repost_with_comment, window_minutes: 60, note: "Repost from the shared-owner side"}
+  partner-customer:
+    - {who: b2b_lead, action: comment, window_minutes: 60, note: "Comment"}

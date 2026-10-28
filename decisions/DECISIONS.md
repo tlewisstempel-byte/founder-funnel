@@ -23,6 +23,10 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | Scaffold in the owner's company cloud account for now, dummy data only; move to Stairpay's project later via config. | |
 | 2026-10-28 | Only real competitor: KPro Software (Keaze Ltd). Monitor, never comment on. | Owner |
 | 2026-10-28 | Daily comments: B2B lead is the human in the loop (follow + bell, curate 3-5 posts a day, triage with an LLM); system drafts; Floris posts. Target 3-5 a day, not 10. | `playbooks/daily-comments.md` |
+| 2026-10-28 | Bot flow, Phase 1: every draft goes to the B2B lead first (edit, then "Send to Floris"); Floris receives drafts and the comment list as DMs from the bot. | Owner |
+| 2026-10-28 | Bot storage: SQLite locally for testing, Firestore on Cloud Run; swappable in `store.py`. | Claude, owner agreed |
+| 2026-10-28 | Owner creates a free test Slack workspace this week; bot is tested there before Stairpay's Slack. | |
+| 2026-10-28 | Team voices: ask Tim and Sinead for their full LinkedIn exports as well as a short intake form. | Owner |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)
@@ -30,7 +34,7 @@ Newest at the bottom of each section. Add a date to every entry.
 - [ ] Floris: request LinkedIn data export (Settings > Data privacy > Get a copy of your data, full archive incl. posts and comments) for `voice/floris.md`
 - [ ] Engineer: agree data contract (`data/DATA_CONTRACT.md`) and anonymised feed format
 - [ ] Discover what metrics exist in the database
-- [ ] Tim and Sinead: LinkedIn profiles/exports for `voice/team.md`
+- [ ] Tim and Sinead: full LinkedIn data exports (all posts) + short intake form, for `voice/team.md`
 - [ ] Slack admin and bot installation
 - [ ] Cloud project ownership and admin access
 - [ ] Which voice rules apply where: Floris's own (emoji, exclamation marks) vs Stairpay brand kit (neither). Proposed: Floris voice for his posts, kit voice for company page.

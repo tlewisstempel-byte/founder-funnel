@@ -1,0 +1,49 @@
+# Slack app manifest. In https://api.slack.com/apps: Create New App > From a manifest > paste this.
+# Socket Mode is on, so the bot needs no public URL: right for testing.
+# For production on Cloud Run: turn Socket Mode off and set the Request URL (see docs/SLACK_BOT.md).
+display_information:
+  name: Stairpay Content
+  description: Drafts, approvals and team tasks for Floris's LinkedIn
+  background_color: "#1f0b56"
+features:
+  app_home:
+    home_tab_enabled: false
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: Stairpay Content
+    always_online: true
+  slash_commands:
+    - command: /idea
+      description: Save a post idea to the idea bank
+      usage_hint: "[policy-take:] your idea"
+      should_escape: false
+    - command: /draft
+      description: Draft a post now (fast lane)
+      usage_hint: "[policy-take:] what the post is about"
+      should_escape: false
+    - command: /comments
+      description: Turn #comment-queue into today's comment list for Floris
+      should_escape: false
+    - command: /buffer
+      description: Show what's in the content pipeline
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - commands
+      - im:write
+      - reactions:write
+      - channels:history
+      - groups:history
+settings:
+  event_subscriptions:
+    bot_events:
+      - message.channels
+      - message.groups
+  interactivity:
+    is_enabled: true
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false

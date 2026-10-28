@@ -9,3 +9,7 @@ __pycache__/
 .obsidian/workspace-mobile.json
 .obsidian/cache
 .trash/
+config/team.yaml
+*.db
+.pytest_cache/
+*.egg-info/

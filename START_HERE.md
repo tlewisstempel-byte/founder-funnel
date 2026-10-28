@@ -8,7 +8,7 @@ A pipeline that turns Stairpay's anonymised data, team input and weekly founder 
 
 ## Status
 
-Phase 0: design and scaffolding (2026-10-28). Nothing is deployed. Slack, cloud project and data access are pending. See `decisions/DECISIONS.md`, "Open items".
+Phase 0-1 (2026-10-28). Slack bot code is built and tested with simulated Slack (`docs/SLACK_BOT.md`); not yet connected to any real workspace. Cloud project and data access are pending. See `decisions/DECISIONS.md`, "Open items".
 
 ## Reading order
 
@@ -24,6 +24,7 @@ Phase 0: design and scaffolding (2026-10-28). Nothing is deployed. Slack, cloud 
    - `BACKLOG.md`: what is being shipped now; `drafts/`: post drafts; `prompts/`: prompts to hand-run in any LLM
 10. `COLLABORATION.md`: how several LLMs and devices work on this at once (git + Obsidian). **Read before editing.**
 11. `sessions/`: handoff notes; read the latest three
+12. `docs/SLACK_BOT.md`: the Slack bot (what it does, setup, code map); code in `src/founder_engine/`, tests in `tests/`
 
 ## Hard rules (never break these)
 
@@ -32,7 +33,7 @@ Phase 0: design and scaffolding (2026-10-28). Nothing is deployed. Slack, cloud 
 3. Floris's LinkedIn account is never automated: he posts himself. No scraping of LinkedIn, no shared passwords.
 4. No customer, partner or individual is named without written OK.
 5. No secrets in this repo. Keys live in the cloud secret store; `.env.example` lists names only.
-6. All model calls go through one module (`src/llm.py`, to be built) so the provider can be swapped by changing config.
+6. All model calls go through one module (`src/founder_engine/llm.py`) so the provider can be swapped by changing config.
 7. Every inbound and outbound integration (Slack, Notion, Google Docs, SQL) is an adapter. Swapping one must not touch the core.
 
 ## People
