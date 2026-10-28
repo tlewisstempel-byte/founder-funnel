@@ -2,6 +2,8 @@
 
 **Purpose:** 15-30 minutes a week that become 3-5 posts. Floris talks; the system writes. This is the single biggest input for sounding like him.
 
+**When:** Wednesdays, alongside the founder content review (to confirm whether they are the same session).
+
 **Format:** Google Meet, recorded, transcript on. Save the transcript as `meetings/YYYY-MM-DD.md` (or paste it into the bot later), then run `prompts/meeting-to-ideas.md`.
 
 ## Before the meeting (B2B lead, 10 min)

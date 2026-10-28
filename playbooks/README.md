@@ -21,6 +21,8 @@ All timings and tactics here are **hypotheses to test**, not facts. The log reco
 | Thu | Story / people | |
 | Mon or Fri | Product, partner proof or a second data post | A light community or cause post |
 
+**Weekly cycle:** the ideas board digest arrives Wednesday morning; the founder content review is on Wednesday; posts picked there are drafted, approved and scheduled into the next week's slots.
+
 Aim to publish in UK working-hour mornings. Move slots to match news. Review reach by slot after 6 weeks.
 
 ## Universal SOP (every post)
@@ -36,7 +38,7 @@ Aim to publish in UK working-hour mornings. Move slots to match news. Review rea
 | T+0 to T+60 min | Team tasks fire (see each playbook). Floris replies to every early comment. | Team, Floris |
 | T+24h | Log reactions, comments, reposts, impressions if available | System / owner |
 | T+7d | Log again, tag outcome (hit, ok, miss) with one-line reason | Owner |
-| Weekly | Review: what worked, tune scores and slots | Owner |
+| Weekly (Wednesday) | Founder content review: what worked, pick next week's posts from the ideas board, tune scores and slots | Owner + Floris |
 
 ## Pre-publish checklist
 
