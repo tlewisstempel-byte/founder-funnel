@@ -77,6 +77,8 @@ class Post(Record):
     rejection_reason: str = ""
     post_url: str = ""
     company_page: bool = False
+    metrics: dict = field(default_factory=dict)  # {"24h": {reactions, comments, reposts, impressions, logged_at}, "7d": {...}}
+    outcome: str = ""  # hit | ok | miss, with a one-line reason, set at 7d
     model: str = ""
     review_msg: dict = field(default_factory=dict)  # {channel, ts} of the owner's card
     floris_msg: dict = field(default_factory=dict)  # {channel, ts} of Floris's card

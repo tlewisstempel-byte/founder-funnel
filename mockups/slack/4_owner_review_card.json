@@ -54,7 +54,7 @@
             "emoji": true
           },
           "action_id": "review_send",
-          "value": "post_f7500c4db7",
+          "value": "post_06fe4d48ba",
           "style": "primary"
         },
         {
@@ -65,7 +65,7 @@
             "emoji": true
           },
           "action_id": "review_edit",
-          "value": "post_f7500c4db7"
+          "value": "post_06fe4d48ba"
         },
         {
           "type": "button",
@@ -75,7 +75,7 @@
             "emoji": true
           },
           "action_id": "review_regen",
-          "value": "post_f7500c4db7"
+          "value": "post_06fe4d48ba"
         },
         {
           "type": "button",
@@ -85,7 +85,7 @@
             "emoji": true
           },
           "action_id": "review_reject",
-          "value": "post_f7500c4db7",
+          "value": "post_06fe4d48ba",
           "style": "danger"
         }
       ]

@@ -14,7 +14,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import blocks, board, scanner, writer
+from . import blocks, board, metrics, scanner, writer
 from .config import POST_TYPES, REPO_ROOT, FunnelStep, Team
 from .diffing import change_ratio, word_diff
 from .llm import LLM
@@ -356,7 +356,8 @@ class Engine:
         rows = self.board_rows()
         top = board.top_candidates(rows, n)
         counts = {c: sum(1 for r in rows if r.column == c) for c in board.COLUMNS}
-        self._dm(self.team.owner.slack_id, blocks.board_digest(top, board.next_cycle_week(), counts),
+        results = blocks.last_week_results(metrics.last_week(self.store.find(Post)))
+        self._dm(self.team.owner.slack_id, blocks.board_digest(top, board.next_cycle_week(), counts, results),
                  f"Ideas board: {len(top)} candidates for the Wednesday review")
         self.sync_notion()
         return len(top)
@@ -382,6 +383,25 @@ class Engine:
             idea.status = "dropped"
             self.store.put(idea)
             self.sync_notion()
+
+    # ------------------------------------------------------------ metrics (24h and 7d, logged by hand)
+    def request_metrics(self, quiet_if_none: bool = True) -> int:
+        items = metrics.due(self.store.find(Post))
+        if items:
+            self._dm(self.team.owner.slack_id, blocks.metrics_request(items), f"{len(items)} post(s) need numbers")
+        elif not quiet_if_none:
+            self._tell_owner("All caught up: no post numbers due.")
+        return len(items)
+
+    def log_metrics(self, post_id: str, checkpoint: str, values: dict, note: str = "") -> Post:
+        if checkpoint not in metrics.CHECKPOINTS:
+            raise ValueError(f"Unknown checkpoint {checkpoint}")
+        post = self._post(post_id)
+        post.metrics = dict(post.metrics or {})
+        post.metrics[checkpoint] = {**{k: values.get(k) for k in metrics.FIELDS}, "note": note, "logged_at": now()}
+        self.store.put(post)
+        self.sync_notion()
+        return post
 
     def sync_notion(self) -> int:
         if not self.notion:

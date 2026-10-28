@@ -1,9 +1,9 @@
-Name,Status,Score,Type,Source,Why now,Week,Urgent,Idea,Draft,Link,Post URL,Floris edited,Engine ID
-EXAMPLE: How long staircasing really takes,New,8,data-post,Stairpay data,Pairs with the income caps news,,No,"EXAMPLE (data): [DATA NEEDED] median time from staircasing enquiry to completion, by quarter.",,,,No,idea_ea507acf56
-EXAMPLE: What providers get wrong about resales,New,7,policy-take,Floris meeting,Strong line from the weekly chat,,No,"EXAMPLE (meeting): Floris on what providers get wrong about resales: 'most of the delay is waiting, not work'.",,,,No,idea_34cb325249
-Shared Ownership Code adoption keeps growing,New,6,policy-take,News scan,Another provider signed up last week,,No,Older people's specialist housing association adopts the Shared Ownership Code; adoption keeps growing after L&Q became the first G15 in July.,,https://www.insidehousing.co.uk/news/specialist-older-peoples-housing-association-adopts-shared-ownership-code-99224,,No,idea_f59cc0d2ad
-US investor brings £100m to UK affordable housing,New,5,policy-take,News scan,New capital entering the sector,,No,"US affordable housing investor enters the UK with a £100m target (Inside Housing Living, 28 Oct).",,https://news.google.com/rss/search?q=%22affordable+housing+investor%22+%C2%A3100m+UK,,No,idea_d3b602e51b
-EXAMPLE: Resales module launch,Picked,6,product-launch,Team inbox,Launch date set,2026-W45,No,"EXAMPLE (team inbox, Tim): new resales module goes live next month.",,,,No,idea_ed516c75b1
+Name,Status,Score,Type,Source,Why now,Week,Urgent,Idea,Draft,Link,Post URL,Floris edited,Reactions,Comments,Reposts,Impressions,Engine ID
+EXAMPLE: How long staircasing really takes,New,8,data-post,Stairpay data,Pairs with the income caps news,,No,"EXAMPLE (data): [DATA NEEDED] median time from staircasing enquiry to completion, by quarter.",,,,No,,,,,idea_b534c7b137
+EXAMPLE: What providers get wrong about resales,New,7,policy-take,Floris meeting,Strong line from the weekly chat,,No,"EXAMPLE (meeting): Floris on what providers get wrong about resales: 'most of the delay is waiting, not work'.",,,,No,,,,,idea_98a5e82ba2
+Shared Ownership Code adoption keeps growing,New,6,policy-take,News scan,Another provider signed up last week,,No,Older people's specialist housing association adopts the Shared Ownership Code; adoption keeps growing after L&Q became the first G15 in July.,,https://www.insidehousing.co.uk/news/specialist-older-peoples-housing-association-adopts-shared-ownership-code-99224,,No,,,,,idea_7a52a7d0ec
+US investor brings £100m to UK affordable housing,New,5,policy-take,News scan,New capital entering the sector,,No,"US affordable housing investor enters the UK with a £100m target (Inside Housing Living, 28 Oct).",,https://news.google.com/rss/search?q=%22affordable+housing+investor%22+%C2%A3100m+UK,,No,,,,,idea_77e3c57b79
+EXAMPLE: Resales module launch,Picked,6,product-launch,Team inbox,Launch date set,2026-W45,No,"EXAMPLE (team inbox, Tim): new resales module goes live next month.",,,,No,,,,,idea_ba3b6e3d85
 Shared ownership income caps raised,Drafting,9,policy-take,News scan,Announced 26 Oct; sector reacting this week,,Yes,"Government raises shared ownership income caps: £80k to £90k outside London, £90k to £110k in London, from the new year. First change since 2016.","Shared ownership income caps are finally going up. First change since 2016 🏠
 
 From the new year:
@@ -12,5 +12,5 @@ From the new year:
 
 Good news. Ten years of wage growth had quietly priced out exactly the people the scheme was built for.
 
-But entry was never the ",https://www.insidehousing.co.uk/news/government-announces-increase-to-shared-ownership-income-caps-99295,,No,idea_cbe863f386
-Team board game night,Published,5,story-bts,Floris meeting,,,No,Team board game night (19 Oct post).,Any board game fans out here? (EXAMPLE of a published row),,https://www.linkedin.com/in/floris-ten-nijenhuis/recent-activity/,No,idea_c6b2ae52f1
+But entry was never the ",https://www.insidehousing.co.uk/news/government-announces-increase-to-shared-ownership-income-caps-99295,,No,,,,,idea_be49473e06
+Team board game night,Published,5,story-bts,Floris meeting,,,No,Team board game night (19 Oct post).,Any board game fans out here? (EXAMPLE of a published row),,https://www.linkedin.com/in/floris-ten-nijenhuis/recent-activity/,No,30,1,0,,idea_680987dabf

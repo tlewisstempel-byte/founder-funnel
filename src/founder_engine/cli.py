@@ -6,6 +6,7 @@
                                      write voice/edits/YYYY-MM.md from Floris's edits (monthly job)
   founder-engine check               validate config files without connecting to anything
   founder-engine scan                news scan into the ideas board (daily job)
+  founder-engine metrics-check      DM the owner any posts whose 24h/7d numbers are due (daily job)
   founder-engine board-digest        send the Wednesday ideas board to the owner (weekly job, Wednesday morning)
   founder-engine board-export [--md F] [--csv F]
                                      write the board as Markdown (Obsidian) and/or CSV (Notion import)
@@ -37,6 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--month", default="")
     sub.add_parser("scan")
     sub.add_parser("board-digest")
+    sub.add_parser("metrics-check")
     sub.add_parser("notion-sync")
     bx = sub.add_parser("board-export")
     bx.add_argument("--md", default="")
@@ -98,6 +100,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "scan":
         added = engine.scan_news()
         print(f"Added {len(added)} ideas ({sum(1 for i in added if i.urgent)} urgent)")
+        return 0
+
+    if args.cmd == "metrics-check":
+        print(f"{engine.request_metrics()} post checkpoint(s) due")
         return 0
 
     if args.cmd == "board-digest":

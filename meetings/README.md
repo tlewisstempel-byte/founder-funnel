@@ -9,12 +9,12 @@
 - Check `/buffer`: how many approved drafts are banked? Aim for 8-10.
 - Note the 1-2 live themes the board flags (news scan).
 - Bring 1 data result if one exists (anonymised and approved).
-- Bring last week's best and worst post, with numbers.
+- Log any numbers still due (`/metrics`): the digest opens with **Last week's results**, best first.
 
 ## Agenda (30 min)
 | Min | Section | Output |
 |---|---|---|
-| 0-3 | **Last week:** what landed, what didn't, anything he'd change | Notes for the learning loop |
+| 0-3 | **Last week:** walk the digest's results (best first): what landed, what didn't, anything he'd change | Notes for the learning loop |
 | 3-10 | **Pick next week:** walk the board's top ideas; Floris confirms or swaps your 4-5; agree the angle in one line each | **Confirm picks** in Slack; bot drafts them |
 | 10-17 | **The week in the sector:** his take on the live themes | Raw material for policy takes |
 | 17-24 | **Inside Stairpay:** one story, one lesson, one thing customers said; react to one data point | Story and data posts |

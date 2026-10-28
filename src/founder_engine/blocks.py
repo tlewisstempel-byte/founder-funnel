@@ -175,13 +175,28 @@ def news_alert(idea) -> list[dict]:
     ]
 
 
-def board_digest(rows: list, week: str, counts: dict) -> list[dict]:
+def last_week_results(posts: list) -> list[dict]:
+    from . import metrics as m
+
+    if not posts:
+        return [_section("*Last week's results*\nNothing published last week."), DIVIDER]
+    lines = []
+    for i, p in enumerate(posts):
+        first = (p.live_text or p.approved_text or "").strip().splitlines()[0][:70] if (p.live_text or p.approved_text) else p.id
+        tag = " 🏆" if i == 0 and m.best_numbers(p) else ""
+        lines.append(f"• <{p.post_url}|{first}> · `{p.post_type}`{tag}\n   {m.fmt(m.best_numbers(p))}")
+    missing = sum(1 for p in posts if not p.metrics)
+    note = f"\n_{missing} post(s) still need numbers: use `/metrics`._" if missing else ""
+    return [_section("*Last week's results* (best first)\n" + "\n".join(lines) + note), DIVIDER]
+
+
+def board_digest(rows: list, week: str, counts: dict, results: list | None = None) -> list[dict]:
     summary = " · ".join(f"{k}: {v}" for k, v in counts.items() if v)
     blocks_ = [
         _section(f"*Ideas board for the Wednesday review* · posts for {week}\nTick the ones to post next week (aim for 4-5), then confirm."),
         _context(summary or "Board is empty"),
         DIVIDER,
-    ]
+    ] + (results or [])
     if not rows:
         blocks_.append(_section("No new ideas. Drop some in #content-inbox or use `/idea`."))
         return blocks_
@@ -203,3 +218,24 @@ def picks_confirmed(titles: list[str], week: str) -> list[dict]:
     listing = "\n".join(f"• {t}" for t in titles) or "Nothing picked."
     return [_section(f"*Picked for {week}* ✅\n{listing}"),
             _actions(_button("Draft all picked now", "board_draft_picked", week, "primary"))]
+
+
+# ---------------------------------------------------------------- metrics
+def metrics_request(items: list) -> list[dict]:
+    """items: [(post, checkpoint)]"""
+    blocks_ = [_section(f"*Numbers to log* ({len(items)})\nOpen each post, then tap the button and type what you see. ~30 seconds each.")]
+    for post, cp in items:
+        first = (post.live_text or post.approved_text or "").strip().splitlines()[0][:80] if (post.live_text or post.approved_text) else post.id
+        blocks_.append(_section(f"*{cp}* · <{post.post_url}|{first}>"))
+        blocks_.append(_actions(_button(f"Log {cp} numbers", "metrics_log", f"{post.id}|{cp}", "primary")))
+    return blocks_
+
+
+def metrics_modal(post, checkpoint: str) -> dict:
+    from .metrics import FIELDS, LABELS
+
+    existing = (post.metrics or {}).get(checkpoint, {})
+    inputs = [_text_input(f, LABELS[f], str(existing.get(f, "") or ""), multiline=False,
+                          optional=(f == "impressions"), placeholder="e.g. 42") for f in FIELDS]
+    inputs.append(_text_input("note", "Anything notable? (optional: who commented, DMs, leads)", multiline=True, optional=True))
+    return _modal("metrics_modal", f"Post numbers {checkpoint}", "Save", inputs, f"{post.id}|{checkpoint}")

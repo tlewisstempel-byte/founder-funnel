@@ -47,6 +47,10 @@ def database_schema() -> dict:
         "Link": {"url": {}},
         "Post URL": {"url": {}},
         "Floris edited": {"checkbox": {}},
+        "Reactions": {"number": {"format": "number"}},
+        "Comments": {"number": {"format": "number"}},
+        "Reposts": {"number": {"format": "number"}},
+        "Impressions": {"number": {"format": "number_with_commas"}},
         "Engine ID": {"rich_text": {}},
     }
 
@@ -69,6 +73,10 @@ def row_properties(r: BoardRow) -> dict:
         "Post URL": {"url": r.post_url or None},
         "Floris edited": {"checkbox": r.floris_edited},
         "Engine ID": _text(r.engine_id),
+        "Reactions": {"number": r.reactions},
+        "Comments": {"number": r.comments},
+        "Reposts": {"number": r.reposts},
+        "Impressions": {"number": r.impressions},
     }
     if r.post_type in POST_TYPES:
         props["Type"] = {"select": {"name": r.post_type}}

@@ -31,6 +31,9 @@ features:
     - command: /scan
       description: Scan sector news for post ideas now
       should_escape: false
+    - command: /metrics
+      description: Log post numbers (24h and 7 days after posting)
+      should_escape: false
     - command: /buffer
       description: Show what's in the content pipeline
       should_escape: false

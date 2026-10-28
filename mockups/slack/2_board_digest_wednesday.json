@@ -21,7 +21,17 @@
     },
     {
       "type": "section",
-      "block_id": "pick_idea_ea507acf56",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Last week's results* (best first)\n\u2022 <https://www.linkedin.com/in/floris-ten-nijenhuis/recent-activity/|Any board game fans out here? (EXAMPLE of a published row)> \u00b7 `story-bts` \ud83c\udfc6\n   30 reactions \u00b7 1 comments \u00b7 0 reposts"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "block_id": "pick_idea_b534c7b137",
       "text": {
         "type": "mrkdwn",
         "text": "*EXAMPLE: How long staircasing really takes* \u00b7 8/10\n_Pairs with the income caps news_\ndata-post \u00b7 Stairpay data"
@@ -35,14 +45,14 @@
               "type": "mrkdwn",
               "text": "Pick"
             },
-            "value": "idea_ea507acf56"
+            "value": "idea_b534c7b137"
           }
         ]
       }
     },
     {
       "type": "section",
-      "block_id": "pick_idea_34cb325249",
+      "block_id": "pick_idea_98a5e82ba2",
       "text": {
         "type": "mrkdwn",
         "text": "*EXAMPLE: What providers get wrong about resales* \u00b7 7/10\n_Strong line from the weekly chat_\npolicy-take \u00b7 Floris meeting"
@@ -56,14 +66,14 @@
               "type": "mrkdwn",
               "text": "Pick"
             },
-            "value": "idea_34cb325249"
+            "value": "idea_98a5e82ba2"
           }
         ]
       }
     },
     {
       "type": "section",
-      "block_id": "pick_idea_f59cc0d2ad",
+      "block_id": "pick_idea_7a52a7d0ec",
       "text": {
         "type": "mrkdwn",
         "text": "*Shared Ownership Code adoption keeps growing* \u00b7 6/10\n_Another provider signed up last week_\npolicy-take \u00b7 News scan \u00b7 <https://www.insidehousing.co.uk/news/specialist-older-peoples-housing-association-adopts-shared-ownership-code-99224|source>"
@@ -77,14 +87,14 @@
               "type": "mrkdwn",
               "text": "Pick"
             },
-            "value": "idea_f59cc0d2ad"
+            "value": "idea_7a52a7d0ec"
           }
         ]
       }
     },
     {
       "type": "section",
-      "block_id": "pick_idea_d3b602e51b",
+      "block_id": "pick_idea_77e3c57b79",
       "text": {
         "type": "mrkdwn",
         "text": "*US investor brings \u00a3100m to UK affordable housing* \u00b7 5/10\n_New capital entering the sector_\npolicy-take \u00b7 News scan \u00b7 <https://news.google.com/rss/search?q=%22affordable+housing+investor%22+%C2%A3100m+UK|source>"
@@ -98,7 +108,7 @@
               "type": "mrkdwn",
               "text": "Pick"
             },
-            "value": "idea_d3b602e51b"
+            "value": "idea_77e3c57b79"
           }
         ]
       }

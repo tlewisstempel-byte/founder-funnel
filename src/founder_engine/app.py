@@ -8,6 +8,7 @@ Commands
   /buffer                       what's in the pipeline (anyone)
   /board                        send the ideas board digest now (owner; normally Wednesday morning)
   /scan                         run the news scan now (owner; normally daily)
+  /metrics                      list posts whose 24h/7d numbers are due, with a button to log each (owner)
 Channels
   #content-inbox                every message becomes an idea (💡 reaction confirms)
   #comment-queue                paste a LinkedIn link + the post text (👀 confirms)
@@ -296,6 +297,42 @@ def _register_board(app: App, engine: Engine, team: Team) -> None:
                 engine.draft_picked()
             except Exception as e:
                 respond(text=f"⚠️ Drafting failed: {e}", replace_original=False)
+
+    @app.command("/metrics")
+    def cmd_metrics(ack, command, respond):
+        ack()
+        if command["user_id"] != owner:
+            respond("Sorry, only the B2B lead logs numbers.")
+            return
+        engine.request_metrics(quiet_if_none=False)
+
+    @app.action("metrics_log")
+    def a_metrics_log(ack, body, client):
+        ack()
+        if body["user"]["id"] != owner:
+            return
+        post_id, cp = body["actions"][0]["value"].split("|")
+        client.views_open(trigger_id=body["trigger_id"], view=blocks.metrics_modal(engine._post(post_id), cp))
+
+    @app.view("metrics_modal")
+    def v_metrics(ack, body, view):
+        from .metrics import FIELDS, parse_count
+
+        vals = view["state"]["values"]
+        parsed, errors = {}, {}
+        for f in FIELDS:
+            try:
+                parsed[f] = parse_count(vals[f]["value"].get("value"))
+                if parsed[f] is None and f != "impressions":
+                    errors[f] = "Please enter a number (0 is fine)."
+            except ValueError:
+                errors[f] = "Numbers only, e.g. 42 or 1.2k"
+        if errors:
+            ack(response_action="errors", errors=errors)
+            return
+        ack()
+        post_id, cp = view["private_metadata"].split("|")
+        engine.log_metrics(post_id, cp, parsed, vals["note"]["value"].get("value") or "")
 
     @app.action("news_draft")
     def a_news_draft(ack, body, respond):

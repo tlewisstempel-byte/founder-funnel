@@ -34,6 +34,7 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | 24h approval reminder deprioritised. | Owner |
 | 2026-10-28 | Notion currently connected to the WRONG workspace (Captain Scarlet Content Hub): test page only, to delete; reconnect to Stairpay's workspace. | Owner |
 | 2026-10-28 | The Wednesday founder content review IS the weekly Floris chat: one 25-30 min meeting that picks next week's posts and captures raw material. | Owner. Agenda in `meetings/README.md` |
+| 2026-10-28 | Metrics logged by hand in Slack at 24h and 7d (reactions, comments, reposts; impressions optional, from Floris). Results open the Wednesday digest. Monthly import of Floris's LinkedIn analytics export: later. | Owner |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)
@@ -50,7 +51,7 @@ Newest at the bottom of each section. Add a date to every entry.
 - [ ] Watchlist: which accounts, competitors and newsletters define the vertical
 - [ ] LLM API cost check; third-party analytics tool shortlist
 - [ ] Image model: decide only if abstract imagery is wanted
-- [ ] How to get post metrics (verify LinkedIn options)
+- [ ] Impressions: ask Floris for a monthly LinkedIn analytics export (Analytics > Content > Export); build an importer once we see the file
 - [ ] Reconnect Notion to Stairpay's workspace; delete the TEST page in Captain Scarlet Content Hub
 - [ ] GitHub: personal account or a Stairpay organisation (org survives staff changes)
 

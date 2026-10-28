@@ -40,6 +40,10 @@ class BoardRow:
     post_url: str = ""
     floris_edited: bool = False
     updated: str = ""
+    reactions: int | None = None
+    comments: int | None = None
+    reposts: int | None = None
+    impressions: int | None = None
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -82,9 +86,18 @@ def build_rows(ideas: list[Idea], posts: list[Post]) -> list[BoardRow]:
             score_notes=idea.score_notes, week=idea.week, urgent=idea.urgent, idea_text=idea.raw_text,
             source_url=idea.source_url, draft_excerpt=text[:280], post_url=post.post_url if post else "",
             floris_edited=bool(post and post.floris_edited),
+            **_nums(post),
             updated=(post.published_at or post.approved_at or post.created_at if post else idea.created_at)))
     order = {c: i for i, c in enumerate(COLUMNS)}
     return sorted(rows, key=lambda r: (order[r.column], -r.score))
+
+
+def _nums(post) -> dict:
+    if not post:
+        return {}
+    m = post.metrics or {}
+    best = m.get("7d") or m.get("24h") or {}
+    return {k: best.get(k) for k in ("reactions", "comments", "reposts", "impressions")}
 
 
 def top_candidates(rows: list[BoardRow], n: int = 10) -> list[BoardRow]:
@@ -111,7 +124,7 @@ def to_markdown(rows: list[BoardRow], week: str) -> str:
 
 
 CSV_FIELDS = ["Name", "Status", "Score", "Type", "Source", "Why now", "Week", "Urgent", "Idea", "Draft",
-              "Link", "Post URL", "Floris edited", "Engine ID"]
+              "Link", "Post URL", "Floris edited", "Reactions", "Comments", "Reposts", "Impressions", "Engine ID"]
 
 
 def to_csv_rows(rows: list[BoardRow]) -> list[dict]:
@@ -119,5 +132,6 @@ def to_csv_rows(rows: list[BoardRow]) -> list[dict]:
         "Name": r.title, "Status": r.column, "Score": r.score, "Type": r.post_type, "Source": r.source,
         "Why now": r.why_now, "Week": r.week, "Urgent": "Yes" if r.urgent else "No", "Idea": r.idea_text[:1900],
         "Draft": r.draft_excerpt, "Link": r.source_url, "Post URL": r.post_url,
-        "Floris edited": "Yes" if r.floris_edited else "No", "Engine ID": r.engine_id,
+        "Floris edited": "Yes" if r.floris_edited else "No", "Reactions": r.reactions, "Comments": r.comments,
+        "Reposts": r.reposts, "Impressions": r.impressions, "Engine ID": r.engine_id,
     } for r in rows]

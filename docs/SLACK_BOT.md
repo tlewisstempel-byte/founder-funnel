@@ -13,6 +13,7 @@
 | Comments | Paste LinkedIn link + post text into `#comment-queue` (👀 confirms). `/comments` ranks them and drafts Floris's comments; you check, then **Send to Floris** | B2B lead, Floris |
 | News scan | Daily job (or `/scan`): GOV.UK and news feeds → relevant items land on the ideas board. Only urgent items DM the B2B lead (**Draft now / Keep for Wednesday / Drop**) | Bot, B2B lead |
 | Ideas board | Wednesday morning (or `/board`): top 10 ideas from every source, scored, with tick boxes → **Confirm picks** → **Draft all picked now**. Mirrored to Notion (`docs/NOTION.md`) | B2B lead, Floris |
+| Metrics | 24h and 7 days after each post the bot DMs a **Log numbers** button: reactions, comments, reposts (public) and impressions (optional, only Floris sees them). `/metrics` shows anything due. Results open the Wednesday digest and fill the Notion columns | B2B lead |
 | Status | `/buffer`: ideas waiting, drafts in review, with Floris, approved, published, and the share approved without edits | Anyone |
 | Learn | `founder-engine edits-summary` writes `voice/edits/YYYY-MM.md` from Floris's edits (monthly) | Scheduled job |
 
@@ -50,7 +51,7 @@ Tests (no network, simulated Slack and model): `pytest`
 2. Deploy: `gcloud run deploy founder-engine --source . --region europe-west2 --no-cpu-throttling --min-instances 1` (the bot keeps working after acknowledging Slack, so CPU must stay allocated).
 3. Secrets in Secret Manager, mounted as env vars: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `ANTHROPIC_API_KEY`. Set `LLM_MODEL`, `GCP_PROJECT_ID`; `STORAGE=firestore` is the image default.
 4. `config/team.yaml` with real IDs: mount as a secret file or bake into the image from a private config.
-5. Cloud Scheduler jobs (as Cloud Run jobs): daily 07:00 `founder-engine scan`; Wednesday 08:00 `founder-engine board-digest`; monthly `founder-engine edits-summary`.
+5. Cloud Scheduler jobs (as Cloud Run jobs): daily 07:00 `founder-engine scan`; daily 09:30 `founder-engine metrics-check`; Wednesday 08:00 `founder-engine board-digest`; monthly `founder-engine edits-summary`.
 
 ## Code map
 

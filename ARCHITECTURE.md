@@ -62,7 +62,7 @@ Floris posts himself. He pastes the live link into the Slack thread; the system 
 On publish, the system DMs the relevant teammates with the action, the deadline and ready-written text in their voice. Rules per post type are in `playbooks/`.
 
 ### 4.7 Learn
-Metrics are logged at 24h and 7 days. Each month the system summarises Floris's before/after edits into `voice/edits/YYYY-MM.md` and proposes updates to `voice/floris.md`. The owner reviews before anything changes.
+Metrics are logged at 24h and 7 days: the bot prompts the B2B lead in Slack with a short form (public counts; impressions optional from Floris). Each month the system summarises Floris's before/after edits into `voice/edits/YYYY-MM.md` and proposes updates to `voice/floris.md`. The owner reviews before anything changes.
 
 ## 5. Data model (log)
 

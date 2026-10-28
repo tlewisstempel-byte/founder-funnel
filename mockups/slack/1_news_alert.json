@@ -27,7 +27,7 @@
             "emoji": true
           },
           "action_id": "news_draft",
-          "value": "idea_cbe863f386",
+          "value": "idea_be49473e06",
           "style": "primary"
         },
         {
@@ -38,7 +38,7 @@
             "emoji": true
           },
           "action_id": "news_keep",
-          "value": "idea_cbe863f386"
+          "value": "idea_be49473e06"
         },
         {
           "type": "button",
@@ -48,7 +48,7 @@
             "emoji": true
           },
           "action_id": "news_drop",
-          "value": "idea_cbe863f386"
+          "value": "idea_be49473e06"
         }
       ]
     }

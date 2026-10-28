@@ -34,7 +34,7 @@
             "emoji": true
           },
           "action_id": "task_done",
-          "value": "task_ff4d926de4",
+          "value": "task_08a4676849",
           "style": "primary"
         },
         {
@@ -45,7 +45,7 @@
             "emoji": true
           },
           "action_id": "task_skip",
-          "value": "task_ff4d926de4"
+          "value": "task_08a4676849"
         }
       ]
     }

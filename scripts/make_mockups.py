@@ -58,6 +58,7 @@ caps_post.add_version(caps_text, "llm")
 games_post = Post(idea_id=games.id, post_type="story-bts", status="published", post_url="https://www.linkedin.com/in/floris-ten-nijenhuis/recent-activity/",
                   live_text="Any board game fans out here? (EXAMPLE of a published row)", published_at="2026-10-19T09:00:00+00:00")
 games_post.add_version(games_post.live_text, "live")
+games_post.metrics = {"7d": {"reactions": 30, "comments": 1, "reposts": 0, "impressions": None}}  # real counts from the 19 Oct post
 
 rows = board.build_rows(ideas, [caps_post, games_post])
 OUT.mkdir(exist_ok=True)
@@ -74,14 +75,20 @@ comments = [CommentCandidate(url="https://www.linkedin.com/posts/example-1", tex
                              score=5, why="Tier A provider voice on the income caps", suggested_comment="Agree the caps were overdue. What we see next is a staircasing bottleneck: entry is easier, moving up still takes months."),
             CommentCandidate(url="https://www.linkedin.com/posts/example-2", text="", author="EXAMPLE: Shared Ownership Council",
                              score=4, why="Code adoption update; Floris can add the resident-experience angle", suggested_comment="Good to see adoption growing. The Code works best when providers can actually show residents their costs and options in one place.")]
+from datetime import datetime, timezone  # noqa: E402
+from founder_engine import metrics as m  # noqa: E402
+
+games_post.published_at = datetime.now(timezone.utc).isoformat()
+results = blocks.last_week_results(m.last_week([games_post]))
 payloads = {
     "1_news_alert": blocks.news_alert(caps),
-    "2_board_digest_wednesday": blocks.board_digest(board.top_candidates(rows), WEEK, counts),
+    "2_board_digest_wednesday": blocks.board_digest(board.top_candidates(rows), WEEK, counts, results),
     "3_picks_confirmed": blocks.picks_confirmed([launch.title, resales.title, data.title, code.title], WEEK),
     "4_owner_review_card": blocks.owner_review(caps_post, caps.raw_text),
     "5_floris_approval_dm": blocks.floris_approval(caps_post),
     "6_team_task_dm": blocks.team_task(task, "https://www.linkedin.com/posts/example", "10:15", "Add a provider-side angle"),
     "7_floris_comment_list": blocks.floris_comment_list(comments),
+    "8_metrics_request": blocks.metrics_request([(games_post, "24h")]),
 }
 (OUT / "slack").mkdir(exist_ok=True)
 lines = ["# Slack mock-ups", "",

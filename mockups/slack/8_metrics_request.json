@@ -1,0 +1,34 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Numbers to log* (1)\nOpen each post, then tap the button and type what you see. ~30 seconds each."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*24h* \u00b7 <https://www.linkedin.com/in/floris-ten-nijenhuis/recent-activity/|Any board game fans out here? (EXAMPLE of a published row)>"
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Log 24h numbers",
+            "emoji": true
+          },
+          "action_id": "metrics_log",
+          "value": "post_4cc180b183|24h",
+          "style": "primary"
+        }
+      ]
+    }
+  ]
+}

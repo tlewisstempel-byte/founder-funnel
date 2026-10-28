@@ -36,8 +36,8 @@ Aim to publish in UK working-hour mornings. Move slots to match news. Review rea
 | T-0 | Floris posts. Hypothesis: put any link in the first comment, not the body. | Floris |
 | T-0 | Floris pastes the live link in the Slack thread; the system logs the live text and diffs it against the approved version | Floris, system |
 | T+0 to T+60 min | Team tasks fire (see each playbook). Floris replies to every early comment. | Team, Floris |
-| T+24h | Log reactions, comments, reposts, impressions if available | System / owner |
-| T+7d | Log again, tag outcome (hit, ok, miss) with one-line reason | Owner |
+| T+24h | Bot DMs the owner a **Log 24h numbers** button: type reactions, comments, reposts (public on the post) and impressions if Floris shares them. ~30 seconds | Owner |
+| T+7d | Same for the 7-day numbers, plus a note on anything notable (who commented, DMs, leads) | Owner |
 | Weekly (Wednesday) | Founder content review: what worked, pick next week's posts from the ideas board, tune scores and slots | Owner + Floris |
 
 ## Pre-publish checklist
