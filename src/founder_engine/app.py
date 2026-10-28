@@ -6,6 +6,8 @@ Commands
                                 product-launch, partner-customer. With no text, drafts the oldest waiting idea.
   /comments                     triage today's #comment-queue into a list for Floris (owner)
   /buffer                       what's in the pipeline (anyone)
+  /board                        send the ideas board digest now (owner; normally Wednesday morning)
+  /scan                         run the news scan now (owner; normally daily)
 Channels
   #content-inbox                every message becomes an idea (💡 reaction confirms)
   #comment-queue                paste a LinkedIn link + the post text (👀 confirms)
@@ -100,6 +102,23 @@ def register(app: App, engine: Engine, team: Team) -> None:
     def cmd_buffer(ack, respond):
         ack()
         respond(engine.buffer_report())
+
+    @app.command("/board")
+    def cmd_board(ack, command, respond):
+        ack()
+        if not guard(command["user_id"], {owner}, respond):
+            return
+        respond("📋 Building the ideas board… it will arrive in your DMs.")
+        safely(engine.send_board_digest)
+
+    @app.command("/scan")
+    def cmd_scan(ack, command, respond):
+        ack()
+        if not guard(command["user_id"], {owner}, respond):
+            return
+        respond("🔎 Scanning the news feeds…")
+        added = safely(engine.scan_news) or []
+        respond(f"Added {len(added)} ideas to the board ({sum(1 for i in added if i.urgent)} urgent).")
 
     # -------------------------------------------------------- channel listeners
     @app.event("message")
@@ -244,6 +263,59 @@ def register(app: App, engine: Engine, team: Team) -> None:
         ack()
         safely(engine.comment_status, value(body), "skipped")
 
+    _register_board(app, engine, team)
+
+
+def _register_board(app: App, engine: Engine, team: Team) -> None:
+    owner = team.owner.slack_id
+
+    @app.action("board_tick")
+    def a_tick(ack):
+        ack()  # ticks are read from the message state when "Confirm picks" is pressed
+
+    @app.action("board_confirm")
+    def a_confirm(ack, body, respond):
+        ack()
+        if body["user"]["id"] != owner:
+            return
+        ids = []
+        for block_id, actions in (body.get("state", {}).get("values", {}) or {}).items():
+            for a in actions.values():
+                ids += [o["value"] for o in (a.get("selected_options") or [])]
+        week = body["actions"][0]["value"]
+        picked = engine.pick_ideas(ids, week)
+        respond(blocks=blocks.picks_confirmed([i.title or i.raw_text[:60] for i in picked], week),
+                text=f"Picked {len(picked)} for {week}", replace_original=False)
+
+    @app.action("board_draft_picked")
+    def a_draft_picked(ack, body, respond):
+        ack()
+        if body["user"]["id"] == owner:
+            respond(text="✍️ Drafting the picked ideas… review cards will arrive one by one.", replace_original=False)
+            try:
+                engine.draft_picked()
+            except Exception as e:
+                respond(text=f"⚠️ Drafting failed: {e}", replace_original=False)
+
+    @app.action("news_draft")
+    def a_news_draft(ack, body, respond):
+        ack()
+        if body["user"]["id"] == owner:
+            respond(text="✍️ Drafting now (fast lane)…", replace_original=False)
+            engine.draft_idea(body["actions"][0]["value"])
+
+    @app.action("news_keep")
+    def a_news_keep(ack, body, respond):
+        ack()
+        respond(text="Kept on the board for Wednesday.", replace_original=False)
+
+    @app.action("news_drop")
+    def a_news_drop(ack, body, respond):
+        ack()
+        if body["user"]["id"] == owner:
+            engine.drop_idea(body["actions"][0]["value"])
+            respond(text="Dropped.", replace_original=False)
+
 
 def build(settings: Settings | None = None, store: Store | None = None, llm: LLM | None = None,
           team: Team | None = None) -> tuple[App, Engine]:
@@ -254,6 +326,10 @@ def build(settings: Settings | None = None, store: Store | None = None, llm: LLM
     engine = Engine(store or make_store(settings), llm or make_llm(settings), team, load_funnels(), app.client,
                     tz=settings.timezone)
     register(app, engine, team)
+    if settings.notion_token and settings.notion_database_id:
+        from .notion_sync import NotionClient
+
+        engine.notion = (NotionClient(settings.notion_token), settings.notion_database_id)
     return app, engine
 
 

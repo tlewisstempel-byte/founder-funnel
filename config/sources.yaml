@@ -1,0 +1,28 @@
+# News sources for the daily scanner. RSS/Atom only (no scraping).
+# Verified reachable 2026-10-28: GOV.UK search feeds, Google News RSS search.
+# Google News search feeds cover sector trade press headlines (Inside Housing, Housing Today, Social Housing, etc.).
+feeds:
+  - name: GOV.UK news (shared ownership)
+    url: "https://www.gov.uk/search/news-and-communications.atom?keywords=shared+ownership"
+  - name: GOV.UK all updates (shared ownership)
+    url: "https://www.gov.uk/search/all.atom?keywords=shared+ownership&order=updated-newest"
+  - name: News - shared ownership
+    url: "https://news.google.com/rss/search?q=%22shared+ownership%22+when:2d&hl=en-GB&gl=GB&ceid=GB:en"
+  - name: News - staircasing
+    url: "https://news.google.com/rss/search?q=staircasing+%22shared+ownership%22+when:7d&hl=en-GB&gl=GB&ceid=GB:en"
+  - name: News - Shared Ownership Code
+    url: "https://news.google.com/rss/search?q=%22Shared+Ownership+Code%22+when:7d&hl=en-GB&gl=GB&ceid=GB:en"
+  - name: News - Homes England affordable homes
+    url: "https://news.google.com/rss/search?q=%22Homes+England%22+affordable+when:2d&hl=en-GB&gl=GB&ceid=GB:en"
+# An item must mention at least one of these to reach the model (cheap pre-filter).
+keywords:
+  - shared ownership
+  - staircasing
+  - shared owner
+  - homes england
+  - affordable home ownership
+  - housing association
+  - leasehold
+  - first-time buyer
+  - first time buyer
+  - affordable housing

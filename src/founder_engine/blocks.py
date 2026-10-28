@@ -162,3 +162,44 @@ def posted_modal(post) -> dict:
         _text_input("live_text", "Did you change the text before posting? Paste the final version here (optional)",
                     multiline=True, optional=True),
     ], post.id)
+
+
+# ---------------------------------------------------------------- news scan and ideas board
+def news_alert(idea) -> list[dict]:
+    return [
+        _section(f"⚡ *Timely post idea* · score {idea.score:g}/10\n*{idea.title}*\n_{idea.why_now}_"),
+        _context(f"<{idea.source_url}|Source> · {idea.post_type or 'type tbc'} · {idea.score_notes}"),
+        _actions(_button("Draft now (fast lane)", "news_draft", idea.id, "primary"),
+                 _button("Keep for Wednesday", "news_keep", idea.id),
+                 _button("Drop", "news_drop", idea.id)),
+    ]
+
+
+def board_digest(rows: list, week: str, counts: dict) -> list[dict]:
+    summary = " · ".join(f"{k}: {v}" for k, v in counts.items() if v)
+    blocks_ = [
+        _section(f"*Ideas board for the Wednesday review* · posts for {week}\nTick the ones to post next week (aim for 4-5), then confirm."),
+        _context(summary or "Board is empty"),
+        DIVIDER,
+    ]
+    if not rows:
+        blocks_.append(_section("No new ideas. Drop some in #content-inbox or use `/idea`."))
+        return blocks_
+    for r in rows:
+        link = f" · <{r.source_url}|source>" if r.source_url else ""
+        flag = "⚡ " if r.urgent else ""
+        text = f"{flag}*{r.title}* · {r.score:g}/10\n_{r.why_now or r.idea_text[:120]}_\n{r.post_type or 'type tbc'} · {r.source}{link}"
+        blocks_.append({
+            "type": "section", "block_id": f"pick_{r.engine_id}",
+            "text": {"type": "mrkdwn", "text": _clip(text, 2900)},
+            "accessory": {"type": "checkboxes", "action_id": "board_tick",
+                          "options": [{"text": {"type": "mrkdwn", "text": "Pick"}, "value": r.engine_id}]},
+        })
+    blocks_ += [DIVIDER, _actions(_button("Confirm picks", "board_confirm", week, "primary"))]
+    return blocks_
+
+
+def picks_confirmed(titles: list[str], week: str) -> list[dict]:
+    listing = "\n".join(f"• {t}" for t in titles) or "Nothing picked."
+    return [_section(f"*Picked for {week}* ✅\n{listing}"),
+            _actions(_button("Draft all picked now", "board_draft_picked", week, "primary"))]

@@ -11,6 +11,8 @@
 | Publish | After approving, Floris posts on LinkedIn and taps **I've posted it**: pastes the link, and the final text if he changed it | Floris |
 | Amplify | Each teammate in that post type's funnel (`config/funnels.yaml`) gets a DM: what to do, by when, a suggested comment in their voice, **Done / Skip** | Team |
 | Comments | Paste LinkedIn link + post text into `#comment-queue` (👀 confirms). `/comments` ranks them and drafts Floris's comments; you check, then **Send to Floris** | B2B lead, Floris |
+| News scan | Daily job (or `/scan`): GOV.UK and news feeds → relevant items land on the ideas board. Only urgent items DM the B2B lead (**Draft now / Keep for Wednesday / Drop**) | Bot, B2B lead |
+| Ideas board | Wednesday morning (or `/board`): top 10 ideas from every source, scored, with tick boxes → **Confirm picks** → **Draft all picked now**. Mirrored to Notion (`docs/NOTION.md`) | B2B lead, Floris |
 | Status | `/buffer`: ideas waiting, drafts in review, with Floris, approved, published, and the share approved without edits | Anyone |
 | Learn | `founder-engine edits-summary` writes `voice/edits/YYYY-MM.md` from Floris's edits (monthly) | Scheduled job |
 
@@ -48,7 +50,7 @@ Tests (no network, simulated Slack and model): `pytest`
 2. Deploy: `gcloud run deploy founder-engine --source . --region europe-west2 --no-cpu-throttling --min-instances 1` (the bot keeps working after acknowledging Slack, so CPU must stay allocated).
 3. Secrets in Secret Manager, mounted as env vars: `SLACK_BOT_TOKEN`, `SLACK_SIGNING_SECRET`, `ANTHROPIC_API_KEY`. Set `LLM_MODEL`, `GCP_PROJECT_ID`; `STORAGE=firestore` is the image default.
 4. `config/team.yaml` with real IDs: mount as a secret file or bake into the image from a private config.
-5. Cloud Scheduler jobs: weekly `founder-engine draft-buffer`, monthly `founder-engine edits-summary` (as Cloud Run jobs).
+5. Cloud Scheduler jobs (as Cloud Run jobs): daily 07:00 `founder-engine scan`; Wednesday 08:00 `founder-engine board-digest`; monthly `founder-engine edits-summary`.
 
 ## Code map
 
@@ -59,11 +61,11 @@ Tests (no network, simulated Slack and model): `pytest`
 | `src/founder_engine/blocks.py` | Every card and form layout |
 | `src/founder_engine/writer.py` | Every prompt; built from `voice/` and `playbooks/` |
 | `src/founder_engine/llm.py` | The only file that calls a model provider |
+| `src/founder_engine/scanner.py`, `board.py`, `notion_sync.py` | News scan, ideas board, Notion mirror |
 | `src/founder_engine/store.py` | Storage: SQLite (local) or Firestore (Cloud Run) |
 | `config/team.yaml`, `config/funnels.yaml` | Who's who; who amplifies which post type |
 
 ## Not built yet
-- Notion mirror (read-only view of the log)
 - Metrics at 24h and 7 days (waiting on the LinkedIn metrics decision)
 - Company-page versions for key posts
 - Reminder if Floris hasn't approved within 24h, and buffer swap-in

@@ -1,0 +1,53 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Comment on Floris's new post* by 10:15\n<https://www.linkedin.com/posts/example|Open the post>\n_Add a provider-side angle_"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Suggested text* (edit so it sounds like you):\n> Wider eligibility is welcome. The next bottleneck for providers is moving people up the ladder, not just onto it."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "LinkedIn doesn't let tools post for you, so copy, tweak, post. ~30 seconds."
+        }
+      ]
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Done",
+            "emoji": true
+          },
+          "action_id": "task_done",
+          "value": "task_ff4d926de4",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Skip",
+            "emoji": true
+          },
+          "action_id": "task_skip",
+          "value": "task_ff4d926de4"
+        }
+      ]
+    }
+  ]
+}

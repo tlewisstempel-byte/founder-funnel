@@ -1,0 +1,56 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "\u26a1 *Timely post idea* \u00b7 score 9/10\n*Shared ownership income caps raised*\n_Announced 26 Oct; sector reacting this week_"
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "<https://www.insidehousing.co.uk/news/government-announces-increase-to-shared-ownership-income-caps-99295|Source> \u00b7 policy-take \u00b7 timely 3, data 2, fit 2, fresh 2"
+        }
+      ]
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Draft now (fast lane)",
+            "emoji": true
+          },
+          "action_id": "news_draft",
+          "value": "idea_cbe863f386",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Keep for Wednesday",
+            "emoji": true
+          },
+          "action_id": "news_keep",
+          "value": "idea_cbe863f386"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Drop",
+            "emoji": true
+          },
+          "action_id": "news_drop",
+          "value": "idea_cbe863f386"
+        }
+      ]
+    }
+  ]
+}

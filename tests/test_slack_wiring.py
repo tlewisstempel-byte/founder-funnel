@@ -84,3 +84,23 @@ def test_blocks_respect_slack_limits(engine):
         if block["type"] == "section":
             assert len(block["text"]["text"]) <= 3000
     assert len(blocks.edit_modal("m", post)["blocks"][0]["element"]["initial_value"]) <= 3000
+
+
+def test_confirm_picks_reads_ticked_boxes(engine, team):
+    from founder_engine.models import Idea
+
+    app = make_app(engine, team)
+    a, b = engine.add_idea("idea a"), engine.add_idea("idea b")
+    req = action_payload("board_confirm", "2026-W45", "U_OWNER")
+    import json as _j
+    from urllib.parse import parse_qs, urlencode
+    payload = _j.loads(parse_qs(req.raw_body)["payload"][0])
+    payload["state"] = {"values": {
+        f"pick_{a.id}": {"board_tick": {"type": "checkboxes", "selected_options": [{"value": a.id}]}},
+        f"pick_{b.id}": {"board_tick": {"type": "checkboxes", "selected_options": []}},
+    }}
+    req2 = BoltRequest(body=urlencode({"payload": _j.dumps(payload)}),
+                       headers={"content-type": ["application/x-www-form-urlencoded"]})
+    app.dispatch(req2)
+    assert engine.store.get(Idea, a.id).status == "picked" and engine.store.get(Idea, a.id).week == "2026-W45"
+    assert engine.store.get(Idea, b.id).status == "new"

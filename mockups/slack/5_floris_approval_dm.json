@@ -1,0 +1,61 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Draft ready for your approval* \u00b7 `policy-take`\nPlease approve, edit or reject within 24h."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "> Shared ownership income caps are finally going up. First change since 2016 \ud83c\udfe0\n>\n> From the new year:\n> \u2022 Outside London: \u00a380k \u2192 \u00a390k\n> \u2022 London: \u00a390k \u2192 \u00a3110k\n>\n> Good news. Ten years of wage growth had quietly priced out exactly the people the scheme was built for.\n>\n> But entry was never the whole problem.\n>\n> Getting into shared ownership is one step. Moving up (staircasing) or moving on (resales) is where most owners get stuck: slow valuations, paper-heavy processes, little visibility on what it will cost them.\n>\n> [OPTIONAL DATA LINE, e.g. \"Across the homes on Stairpay, X% of owners have explored buying more of their home this year.\" Only with an approved figure.]\n>\n> If we want more people to come in at the bottom, the route up has to work too.\n>\n> What would you fix first?"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Approve",
+            "emoji": true
+          },
+          "action_id": "floris_approve",
+          "value": "post_f7500c4db7",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Edit",
+            "emoji": true
+          },
+          "action_id": "floris_edit",
+          "value": "post_f7500c4db7"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Reject",
+            "emoji": true
+          },
+          "action_id": "floris_reject",
+          "value": "post_f7500c4db7",
+          "style": "danger"
+        }
+      ]
+    }
+  ]
+}

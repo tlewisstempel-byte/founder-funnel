@@ -38,8 +38,14 @@ class Idea(Record):
     source: str = "inbox"  # inbox | meeting | sql | calendar | trend | fast_lane
     post_type: str = ""
     created_by: str = ""
-    status: str = "new"  # new | drafted | dropped
+    status: str = "new"  # new | picked | drafted | dropped
     score: float = 0.0
+    title: str = ""  # short label for the board
+    source_url: str = ""
+    why_now: str = ""  # one line: why this matters this week
+    score_notes: str = ""  # how the score was reached
+    urgent: bool = False  # fast lane: should not wait for the Wednesday review
+    week: str = ""  # ISO week it was picked for, e.g. 2026-W45
     id: str = field(default_factory=lambda: new_id("idea"))
     created_at: str = field(default_factory=now)
 
@@ -115,4 +121,14 @@ class CommentCandidate(Record):
     suggested_comment: str = ""
     batch_id: str = ""
     id: str = field(default_factory=lambda: new_id("cmt"))
+    created_at: str = field(default_factory=now)
+
+
+@dataclass
+class SeenItem(Record):
+    """A news item the scanner has already looked at (so it is never suggested twice)."""
+    collection = "seen_items"
+    id: str  # the URL
+    title: str = ""
+    relevant: bool = False
     created_at: str = field(default_factory=now)

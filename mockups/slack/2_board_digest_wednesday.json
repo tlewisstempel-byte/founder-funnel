@@ -1,0 +1,126 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Ideas board for the Wednesday review* \u00b7 posts for 2026-W45\nTick the ones to post next week (aim for 4-5), then confirm."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "New: 4 \u00b7 Picked: 1 \u00b7 Drafting: 1 \u00b7 Published: 1"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "block_id": "pick_idea_ea507acf56",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*EXAMPLE: How long staircasing really takes* \u00b7 8/10\n_Pairs with the income caps news_\ndata-post \u00b7 Stairpay data"
+      },
+      "accessory": {
+        "type": "checkboxes",
+        "action_id": "board_tick",
+        "options": [
+          {
+            "text": {
+              "type": "mrkdwn",
+              "text": "Pick"
+            },
+            "value": "idea_ea507acf56"
+          }
+        ]
+      }
+    },
+    {
+      "type": "section",
+      "block_id": "pick_idea_34cb325249",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*EXAMPLE: What providers get wrong about resales* \u00b7 7/10\n_Strong line from the weekly chat_\npolicy-take \u00b7 Floris meeting"
+      },
+      "accessory": {
+        "type": "checkboxes",
+        "action_id": "board_tick",
+        "options": [
+          {
+            "text": {
+              "type": "mrkdwn",
+              "text": "Pick"
+            },
+            "value": "idea_34cb325249"
+          }
+        ]
+      }
+    },
+    {
+      "type": "section",
+      "block_id": "pick_idea_f59cc0d2ad",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Shared Ownership Code adoption keeps growing* \u00b7 6/10\n_Another provider signed up last week_\npolicy-take \u00b7 News scan \u00b7 <https://www.insidehousing.co.uk/news/specialist-older-peoples-housing-association-adopts-shared-ownership-code-99224|source>"
+      },
+      "accessory": {
+        "type": "checkboxes",
+        "action_id": "board_tick",
+        "options": [
+          {
+            "text": {
+              "type": "mrkdwn",
+              "text": "Pick"
+            },
+            "value": "idea_f59cc0d2ad"
+          }
+        ]
+      }
+    },
+    {
+      "type": "section",
+      "block_id": "pick_idea_d3b602e51b",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*US investor brings \u00a3100m to UK affordable housing* \u00b7 5/10\n_New capital entering the sector_\npolicy-take \u00b7 News scan \u00b7 <https://news.google.com/rss/search?q=%22affordable+housing+investor%22+%C2%A3100m+UK|source>"
+      },
+      "accessory": {
+        "type": "checkboxes",
+        "action_id": "board_tick",
+        "options": [
+          {
+            "text": {
+              "type": "mrkdwn",
+              "text": "Pick"
+            },
+            "value": "idea_d3b602e51b"
+          }
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Confirm picks",
+            "emoji": true
+          },
+          "action_id": "board_confirm",
+          "value": "2026-W45",
+          "style": "primary"
+        }
+      ]
+    }
+  ]
+}

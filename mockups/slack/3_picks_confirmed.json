@@ -1,0 +1,27 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Picked for 2026-W45* \u2705\n\u2022 EXAMPLE: Resales module launch\n\u2022 EXAMPLE: What providers get wrong about resales\n\u2022 EXAMPLE: How long staircasing really takes\n\u2022 Shared Ownership Code adoption keeps growing"
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Draft all picked now",
+            "emoji": true
+          },
+          "action_id": "board_draft_picked",
+          "value": "2026-W45",
+          "style": "primary"
+        }
+      ]
+    }
+  ]
+}

@@ -16,7 +16,9 @@ Updated 2026-10-28. Things that need no Slack, no cloud project, no database and
 - [x] One-pager for Floris (`team/floris-one-pager.md`)
 - [x] Slack bot built and tested with simulated Slack: ideas, drafting, owner review, Floris approval with edit capture, publish, team tasks, daily comment list, buffer report, monthly edit summary (`docs/SLACK_BOT.md`)
 - [ ] Test-workspace run: owner creates workspace and app from `slack/manifest.yaml`, Claude runs the bot end to end
-- [ ] Bot next: 24h approval reminder and buffer swap-in, Notion mirror, metrics logging, company-page versions
+- [x] News scanner (GOV.UK + Google News RSS) and weekly ideas board (Wednesday digest, scoring, picks), Notion mirror, mock-ups (`mockups/`)
+- [ ] Notion: recreate the board in Stairpay's workspace (`docs/NOTION.md`); delete the test page in the wrong workspace
+- [ ] Bot later: metrics logging, company-page versions; 24h reminder (owner: low priority)
 - [ ] Sector calendar to the end of Q1 2027: events, reporting seasons, policy dates
 - [ ] Tool shortlist with prices: LinkedIn analytics/scheduling, meeting transcription; LLM API cost estimate
 

@@ -61,6 +61,8 @@ class Settings:
     gcp_project: str = ""
     port: int = 3000
     timezone: str = "Europe/London"
+    notion_token: str = ""
+    notion_database_id: str = ""
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -77,6 +79,8 @@ class Settings:
             gcp_project=e("GCP_PROJECT_ID", ""),
             port=int(e("PORT", "3000")),
             timezone=e("TIMEZONE", "Europe/London"),
+            notion_token=e("NOTION_TOKEN", ""),
+            notion_database_id=e("NOTION_DATABASE_ID", ""),
         )
 
 

@@ -25,6 +25,12 @@ features:
     - command: /comments
       description: Turn #comment-queue into today's comment list for Floris
       should_escape: false
+    - command: /board
+      description: Send the ideas board for the Wednesday review
+      should_escape: false
+    - command: /scan
+      description: Scan sector news for post ideas now
+      should_escape: false
     - command: /buffer
       description: Show what's in the content pipeline
       should_escape: false

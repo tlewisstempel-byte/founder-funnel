@@ -14,11 +14,11 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import blocks, writer
+from . import blocks, board, scanner, writer
 from .config import POST_TYPES, REPO_ROOT, FunnelStep, Team
 from .diffing import change_ratio, word_diff
 from .llm import LLM
-from .models import CommentCandidate, Idea, Post, TeamTask, now
+from .models import CommentCandidate, Idea, Post, SeenItem, TeamTask, now
 from .store import Store
 
 URL_RE = re.compile(r"<?(https?://[^\s|>]+)(?:\|[^>]*)?>?")
@@ -29,6 +29,7 @@ class Engine:
                  client, root: Path = REPO_ROOT, tz: str = "Europe/London"):
         self.store, self.llm, self.team, self.funnels = store, llm, team, funnels
         self.client, self.root, self.tz = client, root, ZoneInfo(tz)
+        self.notion = None  # (NotionClient, database_id) once Notion is connected
 
     # ------------------------------------------------------------ helpers
     def _dm(self, user_id: str, blocks_: list[dict], text: str) -> dict:
@@ -295,6 +296,102 @@ class Engine:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(writer.summarise_edits(self.llm, pairs, month))
         return path
+
+    # ------------------------------------------------------------ news scan (daily)
+    def scan_news(self, sources: dict | None = None, getter=None) -> list[Idea]:
+        """Fetch feeds, keep unseen relevant items, add them to the board; alert the owner only for urgent ones."""
+        sources = sources or scanner.load_sources()
+        items = scanner.fetch_all(sources, getter or scanner.http_get)
+        fresh = [it for it in items if not self.store.get(SeenItem, it.url)][:40]
+        if not fresh:
+            return []
+        listing = [{"i": i, "title": it.title, "url": it.url, "summary": it.summary, "source": it.source,
+                    "published": it.published} for i, it in enumerate(fresh)]
+        verdicts = {v.get("i"): v for v in writer.triage_news(self.llm, listing, self._recent_posts(), self.root)}
+        added = []
+        for i, it in enumerate(fresh):
+            v = verdicts.get(i, {})
+            relevant = bool(v.get("relevant"))
+            self.store.put(SeenItem(id=it.url, title=it.title, relevant=relevant))
+            if not relevant:
+                continue
+            idea = Idea(raw_text=f"{it.title}\n{it.summary}\nSource: {it.source}, {it.published}", source="trend",
+                        post_type=v.get("post_type") if v.get("post_type") in POST_TYPES else "",
+                        title=v.get("title") or it.title[:80], source_url=it.url, why_now=v.get("why_now", ""),
+                        score=float(v.get("score", 0) or 0), score_notes=v.get("notes", ""), urgent=bool(v.get("urgent")))
+            self.store.put(idea)
+            added.append(idea)
+            if idea.urgent:
+                self._dm(self.team.owner.slack_id, blocks.news_alert(idea), f"Timely: {idea.title}")
+        self.sync_notion()
+        return added
+
+    # ------------------------------------------------------------ weekly board (Wednesday)
+    def board_rows(self) -> list:
+        return board.build_rows(self.store.find(Idea), self.store.find(Post))
+
+    def score_new_ideas(self) -> int:
+        """Score ideas that arrived without a score (inbox, meeting, data); news items are scored at scan time."""
+        todo = [i for i in self.store.find(Idea, status="new") if not i.score_notes]
+        if not todo:
+            return 0
+        results = {r.get("id"): r for r in writer.score_ideas(
+            self.llm, [{"id": i.id, "text": i.raw_text, "source": i.source, "post_type": i.post_type} for i in todo],
+            self._recent_posts())}
+        for idea in todo:
+            r = results.get(idea.id)
+            if not r:
+                continue
+            idea.score, idea.score_notes = float(r.get("score", 0) or 0), r.get("notes", "") or "scored"
+            idea.title = idea.title or r.get("title", "")
+            idea.why_now = idea.why_now or r.get("why_now", "")
+            if not idea.post_type and r.get("post_type") in POST_TYPES:
+                idea.post_type = r["post_type"]
+            self.store.put(idea)
+        return len(todo)
+
+    def send_board_digest(self, n: int = 10) -> int:
+        """Wednesday morning: top ideas from every source, ranked, with checkboxes to pick next week's posts."""
+        self.score_new_ideas()
+        rows = self.board_rows()
+        top = board.top_candidates(rows, n)
+        counts = {c: sum(1 for r in rows if r.column == c) for c in board.COLUMNS}
+        self._dm(self.team.owner.slack_id, blocks.board_digest(top, board.next_cycle_week(), counts),
+                 f"Ideas board: {len(top)} candidates for the Wednesday review")
+        self.sync_notion()
+        return len(top)
+
+    def pick_ideas(self, idea_ids: list[str], week: str | None = None) -> list[Idea]:
+        week = week or board.next_cycle_week()
+        picked = []
+        for iid in idea_ids:
+            idea = self.store.get(Idea, iid)
+            if idea and idea.status == "new":
+                idea.status, idea.week = "picked", week
+                self.store.put(idea)
+                picked.append(idea)
+        self.sync_notion()
+        return picked
+
+    def draft_picked(self) -> list[Post]:
+        return [self.draft_idea(i.id) for i in self.store.find(Idea, status="picked")]
+
+    def drop_idea(self, idea_id: str) -> None:
+        idea = self.store.get(Idea, idea_id)
+        if idea:
+            idea.status = "dropped"
+            self.store.put(idea)
+            self.sync_notion()
+
+    def sync_notion(self) -> int:
+        if not self.notion:
+            return 0
+        client, database_id = self.notion
+        try:
+            return client.sync(database_id, self.board_rows())
+        except Exception as e:  # Notion is a view: never block the pipeline on it
+            self._tell_owner(f"⚠️ Notion sync failed: {e}")
+            return 0
 
 
 def default_month() -> str:

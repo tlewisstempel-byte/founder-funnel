@@ -1,0 +1,80 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*2 posts worth a comment today*\nCopy, tweak, post. Tap \u2705 when done so we can track it."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*1. EXAMPLE: Head of home ownership, large HA* \u00b7 <https://www.linkedin.com/posts/example-1|open post>\n_Tier A provider voice on the income caps_\n\n> Agree the caps were overdue. What we see next is a staircasing bottleneck: entry is easier, moving up still takes months."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "\u2705 Commented",
+            "emoji": true
+          },
+          "action_id": "comment_posted",
+          "value": "cmt_23b34f77ef",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Skip",
+            "emoji": true
+          },
+          "action_id": "comment_skip",
+          "value": "cmt_23b34f77ef"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*2. EXAMPLE: Shared Ownership Council* \u00b7 <https://www.linkedin.com/posts/example-2|open post>\n_Code adoption update; Floris can add the resident-experience angle_\n\n> Good to see adoption growing. The Code works best when providers can actually show residents their costs and options in one place."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "\u2705 Commented",
+            "emoji": true
+          },
+          "action_id": "comment_posted",
+          "value": "cmt_f71166d5fb",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Skip",
+            "emoji": true
+          },
+          "action_id": "comment_skip",
+          "value": "cmt_f71166d5fb"
+        }
+      ]
+    }
+  ]
+}

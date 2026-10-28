@@ -1,0 +1,94 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*New draft for review* \u00b7 `policy-take` \u00b7 variant 1/1: _door and hallway_"
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "mrkdwn",
+          "text": "Idea: Government raises shared ownership income caps: \u00a380k to \u00a390k outside London, \u00a390k to \u00a3110k in London, from the new year. First change since 2016."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "> Shared ownership income caps are finally going up. First change since 2016 \ud83c\udfe0\n>\n> From the new year:\n> \u2022 Outside London: \u00a380k \u2192 \u00a390k\n> \u2022 London: \u00a390k \u2192 \u00a3110k\n>\n> Good news. Ten years of wage growth had quietly priced out exactly the people the scheme was built for.\n>\n> But entry was never the whole problem.\n>\n> Getting into shared ownership is one step. Moving up (staircasing) or moving on (resales) is where most owners get stuck: slow valuations, paper-heavy processes, little visibility on what it will cost them.\n>\n> [OPTIONAL DATA LINE, e.g. \"Across the homes on Stairpay, X% of owners have explored buying more of their home this year.\" Only with an approved figure.]\n>\n> If we want more people to come in at the bottom, the route up has to work too.\n>\n> What would you fix first?"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Alternative hooks*\n\u2022 \u00a380k in 2016 is not \u00a380k in 2026.\n\u2022 The shared ownership income cap just moved for the first time in a decade."
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Check these claims before sending*\n\u2022 Caps rise to \u00a390k / \u00a3110k from the new year \u2014 _Written statement, 26 Oct 2026_\n\u2022 First change since 2016 \u2014 _Inside Housing, 27 Oct 2026_"
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Send to Floris",
+            "emoji": true
+          },
+          "action_id": "review_send",
+          "value": "post_f7500c4db7",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Edit",
+            "emoji": true
+          },
+          "action_id": "review_edit",
+          "value": "post_f7500c4db7"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Redraft",
+            "emoji": true
+          },
+          "action_id": "review_regen",
+          "value": "post_f7500c4db7"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Drop",
+            "emoji": true
+          },
+          "action_id": "review_reject",
+          "value": "post_f7500c4db7",
+          "style": "danger"
+        }
+      ]
+    }
+  ]
+}

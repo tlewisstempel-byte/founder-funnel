@@ -118,3 +118,56 @@ def summarise_edits(llm: LLM, pairs: list[dict], month: str) -> str:
 Write Markdown with sections: "Patterns" (bullets, each with an example), "Proposed changes to voice/floris.md" (bullets),
 "One-offs to ignore". Start with a title line '# Floris's edits: {month}'."""
     return llm.complete(system, user, max_tokens=2500)
+
+
+SCORING_RUBRIC = """Score each idea out of 10 for Floris's B2B LinkedIn (audience: shared ownership providers, developers, lenders, policy people):
+- timeliness 0-3 (3 = news this week or a deadline; 0 = evergreen)
+- data strength 0-3 (3 = backed by approved Stairpay data or hard facts; 0 = opinion only)
+- pillar fit 0-2 (data, policy, building Stairpay, product/partner proof)
+- freshness 0-2 (2 = an angle he hasn't used recently; 0 = repeats a recent post)
+Urgent = true only if waiting until next week's review would make the post stale."""
+
+
+def triage_news(llm: LLM, items: list[dict], recent_posts: list[str], root: Path = REPO_ROOT) -> list[dict]:
+    """items: [{i, title, url, summary, source, published}] -> [{i, relevant, title, why_now, post_type, urgent, score, notes}]"""
+    if not items:
+        return []
+    system = "\n\n".join([
+        HOUSE_RULES,
+        "You scan sector news for post ideas. Only keep items a shared ownership B2B founder in England could credibly "
+        "comment on (shared ownership schemes abroad, boats, holiday homes etc. are not relevant). If several items cover "
+        "the same story, mark only the most authoritative one relevant (prefer official sources, then trade press) and "
+        "set the others relevant=false with notes 'duplicate of [i]'.",
+        SCORING_RUBRIC,
+        "## Live themes and watchlist\n" + read_repo_file("trends/watchlist.md", root)[:6000],
+    ])
+    listing = "\n".join(f"[{x['i']}] {x['published']} | {x['source']} | {x['title']}\n    {x['summary'][:300]}" for x in items)
+    recent = "\n---\n".join(p[:400] for p in recent_posts[-5:]) or "(none yet)"
+    user = f"""News items:
+{listing}
+
+Floris's recent posts:
+{recent}
+
+Return JSON {{"items": [{{"i", "relevant" (bool), "title" (board label, max 8 words), "why_now" (one line),
+"post_type" (data-post|policy-take|story-bts|product-launch|partner-customer), "urgent" (bool), "score" (0-10), "notes" (short breakdown)}}]}}
+for every item."""
+    return llm.complete_json(system, user, max_tokens=4000).get("items", [])
+
+
+def score_ideas(llm: LLM, ideas: list[dict], recent_posts: list[str]) -> list[dict]:
+    """ideas: [{id, text, source, post_type}] -> [{id, score, notes, title, post_type, why_now}]"""
+    if not ideas:
+        return []
+    system = HOUSE_RULES + "\n\n" + SCORING_RUBRIC
+    listing = "\n".join(f"[{x['id']}] ({x['source']}, {x.get('post_type') or 'type?'}) {x['text'][:500]}" for x in ideas)
+    recent = "\n---\n".join(p[:400] for p in recent_posts[-5:]) or "(none yet)"
+    user = f"""Ideas on the board:
+{listing}
+
+Floris's recent posts:
+{recent}
+
+Return JSON {{"ideas": [{{"id", "score", "notes" (e.g. "timely 3, data 1, fit 2, fresh 2"), "title" (max 8 words),
+"post_type", "why_now" (one line)}}]}} for every idea."""
+    return llm.complete_json(system, user, max_tokens=4000).get("ideas", [])

@@ -61,6 +61,14 @@ def fake_responder(system: str, user: str) -> str:
         ranked = [{"id": i, "score": 5 - n, "why": f"reason {n}", "comment": f"comment {n}" if n < 2 else ""}
                   for n, i in enumerate(ids)]
         return json.dumps({"ranked": ranked})
+    if "News items:" in user:
+        ids = [int(i) for i in re.findall(r"^\[(\d+)\]", user, re.M)]
+        return json.dumps({"items": [{"i": i, "relevant": i != 1, "title": f"News {i}", "why_now": "this week",
+                                      "post_type": "policy-take", "urgent": i == 0, "score": 9 - i, "notes": "t3"} for i in ids]})
+    if "Ideas on the board:" in user:
+        ids = re.findall(r"^\[(idea_\w+)\]", user, re.M)
+        return json.dumps({"ideas": [{"id": i, "score": 6, "notes": "timely 1, data 2, fit 2, fresh 1",
+                                      "title": "Scored idea", "post_type": "story-bts", "why_now": "evergreen"} for i in ids]})
     if "Edits from" in user:
         return "# Floris's edits\n\n## Patterns\n- Cuts the opening question."
     raise AssertionError("Unexpected prompt: " + user[:200])
