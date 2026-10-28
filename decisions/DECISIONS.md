@@ -21,6 +21,7 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | Daily list of high-impact posts for Floris to comment on, with suggested comments. | |
 | 2026-10-28 | Policy commentary defaults to issues and schemes, not named politicians. Naming customers or partners needs written OK. | Floris's view to be discussed. |
 | 2026-10-28 | Scaffold in the owner's company cloud account for now, dummy data only; move to Stairpay's project later via config. | |
+| 2026-10-28 | Only real competitor: KPro Software (Keaze Ltd). Monitor, never comment on. | Owner |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)

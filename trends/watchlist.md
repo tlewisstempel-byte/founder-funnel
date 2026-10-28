@@ -7,7 +7,16 @@
 2. **Off-LinkedIn sources (automatable).** Trade press, government and agency announcements, parliamentary activity, sector newsletters, community forums, podcasts.
 3. **Daily comment list for Floris.** 3-5 posts from the watchlist, each with a suggested comment.
 
-To fill the gaps: "People also viewed" and "People who follow Floris also follow" on his profile; who comments on his posts; Stairpay's customer contacts (the B2B lead and Tim know them); speakers at sector events (CIH Housing, NHF Housing Futures, shared ownership conferences).
+## How LinkedIn accounts get onto this list
+The names above come from sector news that quoted them, not from LinkedIn. LinkedIn is not scraped or automated (hard rule). A person finds and adds URLs, in about 20 minutes a week:
+1. **Floris's own posts:** everyone who reacts or comments is already warm. Add the relevant ones.
+2. **Search posts, not people:** LinkedIn search "shared ownership" (also "staircasing", "Shared Ownership Code"), filter Posts, Past week. Add authors who post repeatedly.
+3. **Company pages > People:** at each Tier A provider, search titles like "home ownership", "sales", "shared ownership".
+4. **Who engages with KPro and the trade bodies:** their commenters are the buyers.
+5. **Each person's "More profiles for you"** sidebar.
+6. Optional later: Sales Navigator saved lists, if the budget allows (paid, and within LinkedIn's terms).
+
+Also: "People also viewed" and "People who follow Floris also follow" on his profile; who comments on his posts; Stairpay's customer contacts (the B2B lead and Tim know them); speakers at sector events (CIH Housing, NHF Housing Futures, shared ownership conferences).
 
 ## Tiers
 - **A: comment regularly.** Decision-makers at providers and the people who shape shared ownership policy and standards.
@@ -48,8 +57,9 @@ To fill the gaps: "People also viewed" and "People who follow Floris also follow
 | Leeds Building Society | Lender | Shared ownership mortgages and research | B |
 | National Audit Office | Auditor | March 2026 investigation into shared ownership | C |
 | HomeOwners Alliance | Consumer | Resident-side view | C |
+| **KPro Software (Keaze Ltd)** | **Competitor (the only real one)** | SaaS for affordable housing providers: shared ownership sales and resales, lead capture, multi-portal listing, a 1% staircasing and repairs module; on G-Cloud 15 ([listing](https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/973551567475037)). Watch their company page, launches and who engages with them; never comment on them. | C |
 
-**Gaps to fill:** competitors (do not guess; ask Tim), the G15 and other large providers' heads of home ownership, sector journalists, and Stairpay's own customer contacts.
+**Gaps to fill:** the G15 and other large providers' heads of home ownership, sector journalists, and Stairpay's own customer contacts.
 
 ## Off-LinkedIn sources (verify each before wiring in)
 - Inside Housing, Housing Today, Social Housing (sector press)
