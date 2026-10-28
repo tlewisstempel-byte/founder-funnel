@@ -50,4 +50,4 @@ Aim to publish in UK working-hour mornings. Move slots to match news. Review rea
 
 ## Comment list for Floris (daily)
 
-Each morning the system posts 3-5 posts from the watchlist in Slack, each with a suggested comment he can edit. Comments should add a fact, a data point or a view, not praise.
+See `daily-comments.md`. The B2B lead curates 3-5 posts each morning; the system drafts the comments; Floris copies, edits and posts.

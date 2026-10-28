@@ -93,7 +93,7 @@ Per post type, not fixed. Detailed in `playbooks/`. Principle: amplification sho
 ## 9. Trend scanning: what is realistic
 
 - **LinkedIn feed scanning is not something to automate.** It breaks LinkedIn's terms and risks restricting accounts. Floris's account must never be used for this.
-- **Watchlist (recommended).** 30-50 accounts across housing providers, trade bodies, policy voices and peers. A teammate saves standout posts to the inbox; the system clusters themes weekly and produces a daily "comment on these" list for Floris with suggested comments.
+- **Watchlist + human curation (decided 2026-10-28).** 30-50 accounts across housing providers, trade bodies, policy voices and peers. LinkedIn has no feed API and is not scraped, so the B2B lead is the human in the loop: follows every watchlist account with post notifications on, picks 3-5 posts each morning, triages them with an LLM, and the system turns them into a ready-to-post comment list for Floris. Full SOP: `playbooks/daily-comments.md`. Realistic volume is 3-5 a day, not 10: a 50-account niche watchlist produces only about 7 posts a day in total.
 - **Off-LinkedIn signals (automatable, legal).** Trade press, government and Homes England announcements, parliamentary activity, sector newsletters, Reddit threads, podcasts. These usually lead LinkedIn by days.
 - **Third-party LinkedIn data tools:** optional and carry terms-of-service risk. Decision deferred; owner to assess risk appetite.
 
