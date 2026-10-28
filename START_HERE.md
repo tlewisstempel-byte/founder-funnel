@@ -21,6 +21,7 @@ Phase 0: design and scaffolding (2026-10-28). Nothing is deployed. Slack, cloud 
 7. `data/DATA_CONTRACT.md`: what we need from the SQL database (anonymised)
 8. `trends/watchlist.md`: who and what we monitor
 9. `config/pipeline.example.yaml`: all tunable settings
+   - `BACKLOG.md`: what is being shipped now; `drafts/`: post drafts; `prompts/`: prompts to hand-run in any LLM
 10. `COLLABORATION.md`: how several LLMs and devices work on this at once (git + Obsidian). **Read before editing.**
 11. `sessions/`: handoff notes; read the latest three
 
