@@ -3,7 +3,8 @@
 Updated 2026-10-28. Things that need no Slack, no cloud project, no database and no LinkedIn export. Tick when done and log in `sessions/`.
 
 ## Now (this week)
-- [x] Seed watchlist of target profiles: `trends/watchlist.md` (needs LinkedIn URLs and role checks)
+- [x] Seed watchlist of target profiles: `trends/watchlist.md`
+- [x] Target people v1: 100 entries (68 named, 32 warm, 62 likely LinkedIn profiles, 32 role slots): `trends/target-people.md` / `.csv`. Owner to confirm profiles and fill slots
 - [x] First fast-lane draft (income caps): `drafts/2026-10-28_income-caps.md`
 - [x] Hand-run drafting prompt for any LLM: `prompts/draft-post.md`
 - [x] Floris meeting kit: `meetings/README.md` + `prompts/meeting-to-ideas.md`

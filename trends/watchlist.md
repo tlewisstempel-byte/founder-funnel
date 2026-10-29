@@ -23,7 +23,11 @@ Also: "People also viewed" and "People who follow Floris also follow" on his pro
 - **B: watch for themes; comment when Floris has data to add.**
 - **C: monitor only** (politicians, journalists, competitors). Floris comments on issues, not people.
 
-## People (verify role and add URL)
+## People
+
+**Superseded by `trends/target-people.md` (v1, 100 entries with likely LinkedIn profiles, 2026-10-29).** The seed table below is kept for history.
+
+### Seed list (2026-10-28)
 
 | Name | Role (as last reported) | Org type | Why watch | Tier | Source |
 |---|---|---|---|---|---|
