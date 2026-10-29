@@ -28,7 +28,7 @@
             "emoji": true
           },
           "action_id": "comment_posted",
-          "value": "cmt_aaf9d0d0d5",
+          "value": "cmt_ee33bf4a19",
           "style": "primary"
         },
         {
@@ -39,7 +39,7 @@
             "emoji": true
           },
           "action_id": "comment_skip",
-          "value": "cmt_aaf9d0d0d5"
+          "value": "cmt_ee33bf4a19"
         }
       ]
     },
@@ -61,7 +61,7 @@
             "emoji": true
           },
           "action_id": "comment_posted",
-          "value": "cmt_44a52b1d3e",
+          "value": "cmt_e4fe353d38",
           "style": "primary"
         },
         {
@@ -72,7 +72,7 @@
             "emoji": true
           },
           "action_id": "comment_skip",
-          "value": "cmt_44a52b1d3e"
+          "value": "cmt_e4fe353d38"
         }
       ]
     }

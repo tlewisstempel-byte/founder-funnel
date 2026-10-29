@@ -14,7 +14,7 @@
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": "> Shared ownership income caps are finally going up. First change since 2016 \ud83c\udfe0\n>\n> From the new year:\n> \u2022 Outside London: \u00a380k \u2192 \u00a390k\n> \u2022 London: \u00a390k \u2192 \u00a3110k\n>\n> Good news. Ten years of wage growth had quietly priced out exactly the people the scheme was built for.\n>\n> But entry was never the whole problem.\n>\n> Getting into shared ownership is one step. Moving up (staircasing) or moving on (resales) is where most owners get stuck: slow valuations, paper-heavy processes, little visibility on what it will cost them.\n>\n> [OPTIONAL DATA LINE, e.g. \"Across the homes on Stairpay, X% of owners have explored buying more of their home this year.\" Only with an approved figure.]\n>\n> If we want more people to come in at the bottom, the route up has to work too.\n>\n> What would you fix first?"
+        "text": "> The shared ownership income caps are going up for the first time since 2016 \ud83c\udfe0\n>\n> From the new year, households outside London will be able to earn up to \u00a390k (up from \u00a380k), and in London up to \u00a3110k (up from \u00a390k).\n>\n> It's a welcome change, because a decade of wage growth had quietly priced out many of the people the scheme was designed for.\n>\n> Getting more people in is only half the job, though. Most shared owners get stuck later on, when they want to buy a bigger share or sell, and run into slow valuations, paper-heavy processes and very little visibility of what it will cost them.\n>\n> [OPTIONAL DATA LINE, e.g. \"Across the homes on Stairpay, X% of owners have looked at buying more of their home this year.\" Only with an approved figure.]\n>\n> If we're widening the front door, the route through the rest of the house has to work too. What would you fix first?"
       }
     },
     {
@@ -31,7 +31,7 @@
             "emoji": true
           },
           "action_id": "floris_approve",
-          "value": "post_06fe4d48ba",
+          "value": "post_dc737585d6",
           "style": "primary"
         },
         {
@@ -42,7 +42,7 @@
             "emoji": true
           },
           "action_id": "floris_edit",
-          "value": "post_06fe4d48ba"
+          "value": "post_dc737585d6"
         },
         {
           "type": "button",
@@ -52,7 +52,7 @@
             "emoji": true
           },
           "action_id": "floris_reject",
-          "value": "post_06fe4d48ba",
+          "value": "post_dc737585d6",
           "style": "danger"
         }
       ]
