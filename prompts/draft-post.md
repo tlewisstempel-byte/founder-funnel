@@ -2,7 +2,7 @@
 
 Use this until the pipeline is built. Paste it into any LLM together with the files listed.
 
-**Attach or paste:** `voice/floris.md`, the playbook for the post type (`playbooks/<type>.md`), and the raw material (notes, transcript excerpt, data result, news link).
+**Attach or paste:** `voice/floris.md`, the latest files in `voice/edits/` (lessons from past edits), the playbook for the post type (`playbooks/<type>.md`), and the raw material (notes, transcript excerpt, data result, news link).
 
 ---
 
@@ -13,6 +13,7 @@ Follow the voice file and the playbook exactly. Rules:
 - Never invent a number, quote, opinion or customer. If something is missing, write [PLACEHOLDER: what's needed].
 - No customer or partner named unless the notes say written OK was given.
 - No financial or legal advice; no hype.
+- Avoid repeated definite articles ("their keys", not "the keys"); one rhetorical turn per post; end plainly or on the mission, not on a crafted aphorism.
 - Natural phrasing: one flowing sentence beats several clipped ones; avoid stock AI patterns (strings of three-word sentences, "Here's the thing", "It's not X. It's Y." reveals).
 
 Return:

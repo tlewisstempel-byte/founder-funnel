@@ -24,6 +24,34 @@ needs: Floris's view; one Stairpay data point (optional)
 
 ---
 
+## CURRENT VERSION: B2B lead's rewrite (2026-10-29), to send to Floris
+
+The Shared Ownership income caps are going up for the first time since 2016 🏠
+
+From the new year:
+- Outside London: £80k → £90k
+- London: £90k → £110k
+
+The sector has rightly welcomed it, because ten years of wage growth had quietly priced out many of the people Shared Ownership was built for.
+
+Here's the question nobody's asking: what happens to all these new buyers once they have their keys?
+
+More than 250,000 households already live in Shared Ownership homes in England.
+
+Every one of them eventually wants to know the same thing: what would it cost me to buy more of my home, and how do I do it?
+
+I know how hard that still is to answer, because 1 in 3 staircasing transactions in this country now go through Stairpay.
+
+The cap decides how many people can begin Shared Ownership. Our mission at Stairpay is to help as many of them as possible through the entire journey.
+
+#SharedOwnership #Housing
+
+_Small tidy-ups vs the owner's text: removed an empty bullet, "Stairpay" and "Shared Ownership" capitalised to match Floris, the dash in the last line turned into two sentences (or keep a comma: "…begin Shared Ownership, and our mission…"). Hashtags added per the playbook._
+
+---
+
+## Earlier versions (superseded)
+
 ## Variant A: "the question nobody's asking" (rewritten 2026-10-29 on the structure of his 28 Sep equity loan post)
 
 The Shared Ownership income caps are going up for the first time since 2016 🏠

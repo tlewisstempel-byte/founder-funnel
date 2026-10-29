@@ -18,7 +18,11 @@ Hard rules:
 - Follow the voice file and the playbook exactly.
 - Natural phrasing: write the way a person talks. Prefer one flowing sentence to several clipped fragments;
   avoid stock AI patterns (strings of three-word sentences, "Here's the thing", "Let that sink in", em-dash pile-ups,
-  "It's not X. It's Y." reveals, rhetorical lists of three)."""
+  "It's not X. It's Y." reveals, rhetorical lists of three).
+- Avoid repeated definite articles where a possessive or no article reads more naturally ("their keys", not "the keys").
+- One rhetorical turn per post; once the proof point lands, stop. End on a plain statement or the mission, not a crafted
+  parallel aphorism. Keep one argument per post (no callbacks unless asked).
+- Read voice/edits/ for what the owner and Floris have changed in past drafts, and do not repeat those patterns."""
 
 
 def read_repo_file(rel: str, root: Path = REPO_ROOT) -> str:
@@ -31,6 +35,8 @@ def draft_post(llm: LLM, idea_text: str, post_type: str, recent_posts: list[str]
         [
             HOUSE_RULES,
             "## Voice file\n" + read_repo_file("voice/floris.md", root),
+            "## Lessons from past edits\n" + "\n\n".join(
+                f.read_text() for f in sorted((root / "voice" / "edits").glob("*.md"))[-4:]),
             f"## Playbook ({post_type})\n" + read_repo_file(f"playbooks/{post_type}.md", root),
         ]
     )
