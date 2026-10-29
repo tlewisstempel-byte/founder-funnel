@@ -1,6 +1,6 @@
 # Voice: Floris ten Nijenhuis
 
-**Status: PROVISIONAL.** Built from six recent posts seen in screenshots (Aug-Oct 2026), several truncated at "...more". It will be rebuilt from his full LinkedIn export (posts and comments). Treat everything below as a starting hypothesis.
+**Status: PROVISIONAL.** See `voice/export-analysis.md` for which past posts are his own voice and which look AI-assisted; train on the human ones. Built from six recent posts seen in screenshots (Aug-Oct 2026), several truncated at "...more". It will be rebuilt from his full LinkedIn export (posts and comments). Treat everything below as a starting hypothesis.
 
 ## Observed so far (small sample)
 
@@ -29,7 +29,8 @@ Source posts: 19 Oct ("The least obvious thing to do when things are going well 
 - **Endings:** an invitation ("Want to be involved? Let me know!") or a collective line ("Together, the housing sector can…").
 - **Exclamation marks:** used, but in campaign/celebration posts more than in business posts.
 
-### The policy-take structure (from his 28 Sep 2026 equity loan post, his strongest so far)
+### The policy-take structure (from his 28 Sep 2026 equity loan post)
+**Caveat (2026-10-29):** this post shows LLM scaffolding (see `voice/export-analysis.md`). Keep the analytical shape below, but write it in his conversational voice and drop the stock phrases ("Here's the one nobody's asking", one-line punch reveals, crafted parallel closers).
 1. **Name the debate** in one line, then list the arguments people are having, each with an emoji at the end (📈 🤼 💷).
 2. **Pivot:** "Here's the one nobody's asking:"
 3. **Hard numbers with a source and date**, then translate them into people: "That's two hundred thousand households who own most of a home and owe a slice of it."
