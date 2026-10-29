@@ -9,6 +9,9 @@ needs: Floris's view; one Stairpay data point (optional)
 # Draft: shared ownership income caps raised
 
 **Fact base (verify before posting)**
+- More than 250,000 households live in Shared Ownership in England: National Audit Office, investigation into shared ownership, 25 Mar 2026.
+- 1 in 3 staircasing transactions go through Stairpay: Floris's own 28 Sep 2026 post.
+- 200,000+ Help to Buy households still owe an equity loan (206,330 as of April 2025): Floris's 28 Sep 2026 post.
 - 75,000 Shared Ownership homes on Stairpay and "thousands of people" helped to full homeownership: Floris's own 19 Oct 2026 post (re-confirm the current number with him).
 - Announced 26 Oct 2026 by housing minister Matthew Pennycook (written statement).
 - Caps rise from £80,000 to £90,000 outside London and from £90,000 to £110,000 in London; frozen since 2016; effective "in the new year".
@@ -21,35 +24,39 @@ needs: Floris's view; one Stairpay data point (optional)
 
 ---
 
-## Variant A: "on paper a win, but…" (rewritten 2026-10-29 in Floris's voice, from his 19 Oct and Together for Homes posts)
+## Variant A: "the question nobody's asking" (rewritten 2026-10-29 on the structure of his 28 Sep equity loan post)
 
-The Shared Ownership income caps are finally going up, for the first time since 2016 🏠
+The Shared Ownership income caps are going up for the first time since 2016 🏠
 
 From the new year:
 - Outside London: £80k → £90k
 - London: £90k → £110k
 
-On paper, that's a big win, and an overdue one. Ten years of wage growth had quietly pushed many of the people Shared Ownership was built for over the limit.
+The sector has rightly welcomed it, because ten years of wage growth had quietly priced out many of the people Shared Ownership was built for.
 
-But getting people through the front door has never been the hardest part. With 75,000 Shared Ownership homes on Stairpay, what we see every day is owners getting stuck later on, when they want to buy a bigger share or sell, and the process is slow, paper-heavy and hard to predict.
+Here's the question nobody's asking: what happens to all these new buyers once they have the keys?
 
-We've helped thousands of people reach full homeownership, but we're still a long way from moving up the ladder being as simple as getting onto it.
+More than 250,000 households already live in Shared Ownership homes in England. Every one of them eventually wants to know the same thing: what would it cost me to buy more of my home, and how do I do it?
 
-The caps are a great first step. Making staircasing and resales work just as well should be the next one.
+I know how hard that still is to answer, because 1 in 3 staircasing transactions in this country now go through Stairpay. Getting people in has never been the difficult part. It's the years afterwards. 📃
 
-What would you fix first?
+A month ago I wrote about 200,000 Help to Buy households facing exactly the same problem. The pattern is the same: we design schemes around the purchase, and not around the decade that follows.
+
+The caps decide how many people get in. What happens next decides how many of them ever own their home outright.
 
 #SharedOwnership #Housing
 
 ---
 
-## Variant B: short (rewritten 2026-10-29 in Floris's voice)
+## Variant B: short
 
-Ten years later, the Shared Ownership income caps are finally moving! 🏠
+The Shared Ownership income caps are finally moving, for the first time since 2016 🏠 £90k outside London, £110k in London, from the new year.
 
-From the new year, households can earn up to £90k outside London and £110k in London, up from £80k and £90k. It's a welcome change, and a long overdue one.
+It's the right call, but here's the question nobody's asking: what happens after these buyers get the keys?
 
-The bigger question for the sector is what happens after people move in. With 75,000 Shared Ownership homes on Stairpay, we see how hard it still is to buy a bigger share or sell, and that's exactly what we're working to fix.
+1 in 3 staircasing transactions in this country now go through Stairpay, and the hard part has never been the purchase. It's the years afterwards, when people want to buy more of their home or sell, and the process is slow and hard to predict.
+
+The caps decide how many people get in. What happens next decides how many of them ever own their home outright.
 
 #SharedOwnership #Housing
 

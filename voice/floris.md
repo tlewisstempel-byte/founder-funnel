@@ -29,7 +29,21 @@ Source posts: 19 Oct ("The least obvious thing to do when things are going well 
 - **Endings:** an invitation ("Want to be involved? Let me know!") or a collective line ("Together, the housing sector can…").
 - **Exclamation marks:** used, but in campaign/celebration posts more than in business posts.
 
+### The policy-take structure (from his 28 Sep 2026 equity loan post, his strongest so far)
+1. **Name the debate** in one line, then list the arguments people are having, each with an emoji at the end (📈 🤼 💷).
+2. **Pivot:** "Here's the one nobody's asking:"
+3. **Hard numbers with a source and date**, then translate them into people: "That's two hundred thousand households who own most of a home and owe a slice of it."
+4. **The question those people actually have**, in their words: "what would it cost me to buy the rest and how do I do it?"
+5. **What's being done, and why it isn't enough** (fair to the other side, no attack).
+6. **Credibility in first person:** "I know this because…", then the Stairpay proof point.
+7. **Deliberate short punch lines** for emphasis ("It's the decade afterwards. 📃"): one or two per post, not strings of them.
+8. **Understated close**, often wry ("my hope for the Budget is a dull one") and a parallel-contrast last line ("We are very good at helping people buy a share of a home. We are still terrible at helping them buy the rest of it.").
+
+Also: "I" for his opinion, "we" for Stairpay; links the company page inline; two hashtags at the end. Don't reuse a closing line he has already used.
+
 ### Public facts he has already shared (safe to reuse, cite the post)
+- 1 in 3 staircasing transactions in the country go through Stairpay (28 Sep 2026 post).
+- Help to Buy funded 387,274 equity loans; 206,330 still outstanding as of April 2025 (28 Sep 2026 post; he cites official data).
 - 75,000 Shared Ownership homes on Stairpay; ARR tripled over 12 months with the same headcount (19 Oct 2026 post).
 - "If we tripled our number of homes again… we'd have 100% of the SO market" (i.e. roughly a third of the market).
 - "Helped thousands of people achieve full homeownership".
