@@ -13,6 +13,7 @@ Follow the voice file and the playbook exactly. Rules:
 - Never invent a number, quote, opinion or customer. If something is missing, write [PLACEHOLDER: what's needed].
 - No customer or partner named unless the notes say written OK was given.
 - No financial or legal advice; no hype.
+- Natural phrasing: one flowing sentence beats several clipped ones; avoid stock AI patterns (strings of three-word sentences, "Here's the thing", "It's not X. It's Y." reveals).
 
 Return:
 1. Two variants (different angles, not just different wording)

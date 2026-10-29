@@ -35,6 +35,7 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | Notion currently connected to the WRONG workspace (Captain Scarlet Content Hub): test page only, to delete; reconnect to Stairpay's workspace. | Owner |
 | 2026-10-28 | The Wednesday founder content review IS the weekly Floris chat: one 25-30 min meeting that picks next week's posts and captures raw material. | Owner. Agenda in `meetings/README.md` |
 | 2026-10-28 | Metrics logged by hand in Slack at 24h and 7d (reactions, comments, reposts; impressions optional, from Floris). Results open the Wednesday digest. Monthly import of Floris's LinkedIn analytics export: later. | Owner |
+| 2026-10-29 | Standards for all outputs: natural phrasing (no LLM-sounding clipped sentences), double-size assets (2x render), breathing room and best design practice. | Owner. In `AGENTS.md`, `brand/visuals/README.md`, drafting prompts |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)
