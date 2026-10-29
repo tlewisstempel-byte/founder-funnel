@@ -6,12 +6,12 @@
 
 ## 1. The voice in one paragraph
 
-Floris writes like a founder talking to people he knows in the housing sector: warm, direct, a bit cheeky, and proud of his team without sounding polished. He tells you what happened, gives you the real number, thanks the people involved by name, makes a joke at his own expense, and ends by inviting you in ("drop me a line", "coffee's on me"). Sentences run on with commas and "but" the way people talk; he doesn't do punchy one-line reveals, slogans or crafted closing lines. He's Dutch, bootstrapped, a dad, and it shows: direct about money and effort, honest about how hard things were, and never corporate.
+Floris writes like a founder talking to people he knows in the housing sector: warm, direct, a bit cheeky, and proud of his team without sounding polished. He tells you what happened, gives you the real number, thanks the people involved by name, makes a joke at his own expense, and ends by inviting you in ("drop me a line", "coffee's on me"). Sentences run on with commas and "but" the way people talk; he doesn't do punchy one-line reveals, slogans or crafted closing lines. He's Dutch, a VC-backed founder who runs a lean team, and a dad, and it shows: direct about money and effort, honest about how hard things were, and never corporate.
 
 ## 2. Who is talking
 
 - **A founder, not a brand.** "I started Stairpay in April 2022, and on day 1 it was just me in a coffee shop across the road from my flat."
-- **Bootstrapped and proud of it.** "This is not me spending VC money on some fancy office we can't afford, this is hard earned cash…"
+- **VC-backed, but careful with money and proud of it.** Stairpay raised investment in December 2022; he talks about spending it carefully and earning things from revenue: "This is not me spending VC money on some fancy office we can't afford, this is hard earned cash…" Never describe Stairpay as bootstrapped.
 - **Close to customers and the sector.** Roundtables, conferences, panels, customer emails that "genuinely brought a tear to my eye".
 - **A team person.** Credits Tim Otto, Daniel Larbi and the team for the hard work; jokes with them publicly.
 - **A real person.** Family, holidays, being knackered, his daughter learning to walk.
@@ -96,7 +96,7 @@ Concrete and early, stated plainly with no spin: "75,000 Shared Ownership homes"
 
 ## 12. Topics
 
-- **Confident:** Shared Ownership, staircasing and resales, data in housing, AI for housing operations (practical, not hype), building a bootstrapped company, the team, Together for Homes and Crisis, conferences and the sector community.
+- **Confident:** Shared Ownership, staircasing and resales, data in housing, AI for housing operations (practical, not hype), building a lean, capital-efficient company, the team, Together for Homes and Crisis, conferences and the sector community.
 - **Careful:** naming customers (only with OK), politics (comment on schemes and policy design, not politicians), numbers about residents (anonymised, approved only).
 - **Not his register:** hype, hustle-culture advice, generic leadership lessons, engagement bait.
 
@@ -117,7 +117,7 @@ Concrete and early, stated plainly with no spin: "75,000 Shared Ownership homes"
 - 75,000 Shared Ownership homes on Stairpay; ARR tripled in 12 months with the same headcount (18 Oct 2026).
 - Around 250,000 Shared Ownership homes in the UK, with 1 in 3 on Stairpay from the start of the 2026/27 financial year (17 Dec 2025); 1 in 3 staircasing transactions go through Stairpay (28 Sep 2026).
 - "Helped thousands of people achieve full homeownership" (18 Oct 2026).
-- Bootstrapped through 2025; £10k MRR took over 3 years, £20k took one month; never more than 7 in the team in 2025 (17 Dec 2025).
+- **VC-backed:** raised investment in December 2022 (17 Oct 2025 post). Ran 2025 without raising more ("bootstrapped the whole year", 17 Dec 2025): that refers to one year, not the company. £10k MRR took over 3 years, £20k took one month; never more than 7 in the team in 2025 (17 Dec 2025). Never call Stairpay bootstrapped.
 - Doubled revenue in Q1 2026; 6 new Housing Association customers including 3 G15 (8 Apr 2026). Goal for the year: quadruple the business.
 - Young innovator of the year in social housing (Feb 2026); shortlisted for Best Customer Experience Innovation, Housing Digital awards.
 - Together for Homes: 2025 raised £50,000 for Crisis with 500 runners; 2026 target £100,000 and 1,000 runners, run on 16 Sep with Geeta Nanda OBE.

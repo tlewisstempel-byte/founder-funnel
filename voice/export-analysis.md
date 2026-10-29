@@ -24,7 +24,7 @@ Source: LinkedIn export `Rich_Media.csv`, shared 2026-10-29. 49 items: 28 with t
 - **Personal life appears naturally:** his daughter's first steps, Japan trip, needing R&R.
 - **Plain founder-speak:** "obvs", "knackered", "Not gonna lie", "I must admit", "Call me sad but", "pinch me moment".
 - **Story with concrete detail:** the coffee shop, ordering a drink every two hours, WeWork backpacks, name on the lift.
-- **Pride in bootstrapping and the team**, numbers stated plainly (£10k MRR took 3 years, £20k took a month; 1 in 3 homes; 75,000 homes; tripled ARR).
+- **Pride in running lean (VC-backed since Dec 2022, careful with money) and in the team**, numbers stated plainly (£10k MRR took 3 years, £20k took a month; 1 in 3 homes; 75,000 homes; tripled ARR).
 - **Exclamation marks and emoji** in celebratory and event posts; calmer in business posts.
 - **Endings:** an invitation ("drop me a line", "DM me, coffee's on me!", "Want to be involved? Let me know!") or a simple sign-off ("See you in 2026", "2026, let's go!").
 - **Hashtags:** inline #SharedOwnership or 2-3 at the end, inconsistent case.

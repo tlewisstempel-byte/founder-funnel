@@ -37,6 +37,7 @@ Newest at the bottom of each section. Add a date to every entry.
 | 2026-10-28 | Metrics logged by hand in Slack at 24h and 7d (reactions, comments, reposts; impressions optional, from Floris). Results open the Wednesday digest. Monthly import of Floris's LinkedIn analytics export: later. | Owner |
 | 2026-10-29 | Standards for all outputs: natural phrasing (no LLM-sounding clipped sentences), double-size assets (2x render), breathing room and best design practice. | Owner. In `AGENTS.md`, `brand/visuals/README.md`, drafting prompts |
 | 2026-10-29 | Floris voice built from his own-voice posts only. Exclude entirely: 11 and 18 May 2026 (AI-written). Info and flow only, not tone: 28 Sep 2026, 17 Dec 2025, 25 Feb 2026, 12 Aug 2026 (AI-assisted). | Owner. `config/voice_sources.yaml` |
+| 2026-10-29 | Stairpay is VC-backed (raised Dec 2022), not bootstrapped. "Bootstrapped the whole year" in his Dec 2025 post refers to 2025 only. Never describe Stairpay as bootstrapped. | Owner correction |
 | 2026-10-28 | Sync model: one git repo is both the GitHub source of truth and the Obsidian vault on each device. Multiple LLMs work in parallel via branches/worktrees. | See `COLLABORATION.md` |
 
 ## Open items (next week unless noted)
