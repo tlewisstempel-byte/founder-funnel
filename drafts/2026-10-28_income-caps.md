@@ -9,6 +9,7 @@ needs: Floris's view; one Stairpay data point (optional)
 # Draft: shared ownership income caps raised
 
 **Fact base (verify before posting)**
+- 75,000 Shared Ownership homes on Stairpay and "thousands of people" helped to full homeownership: Floris's own 19 Oct 2026 post (re-confirm the current number with him).
 - Announced 26 Oct 2026 by housing minister Matthew Pennycook (written statement).
 - Caps rise from £80,000 to £90,000 outside London and from £90,000 to £110,000 in London; frozen since 2016; effective "in the new year".
 - Outside London via the Homes England Capital Funding Guide; London via the London Plan monitoring report.
@@ -20,27 +21,37 @@ needs: Floris's view; one Stairpay data point (optional)
 
 ---
 
-## Variant A: "the door is wider, now fix the hallway" (revised 2026-10-29 for natural phrasing)
+## Variant A: "on paper a win, but…" (rewritten 2026-10-29 in Floris's voice, from his 19 Oct and Together for Homes posts)
 
-The shared ownership income caps are going up for the first time since 2016 🏠
+The Shared Ownership income caps are finally going up, for the first time since 2016 🏠
 
-From the new year, households outside London will be able to earn up to £90k (up from £80k), and in London up to £110k (up from £90k).
+From the new year:
+- Outside London: £80k → £90k
+- London: £90k → £110k
 
-It's a welcome change, because a decade of wage growth had quietly priced out many of the people the scheme was designed for.
+On paper, that's a big win, and an overdue one. Ten years of wage growth had quietly pushed many of the people Shared Ownership was built for over the limit.
 
-Getting more people in is only half the job, though. Most shared owners get stuck later on, when they want to buy a bigger share or sell, and run into slow valuations, paper-heavy processes and very little visibility of what it will cost them.
+But getting people through the front door has never been the hardest part. With 75,000 Shared Ownership homes on Stairpay, what we see every day is owners getting stuck later on, when they want to buy a bigger share or sell, and the process is slow, paper-heavy and hard to predict.
 
-[OPTIONAL DATA LINE, e.g. "Across the homes on Stairpay, X% of owners have looked at buying more of their home this year." Only with an approved figure.]
+We've helped thousands of people reach full homeownership, but we're still a long way from moving up the ladder being as simple as getting onto it.
 
-If we're widening the front door, the route through the rest of the house has to work too. What would you fix first?
+The caps are a great first step. Making staircasing and resales work just as well should be the next one.
+
+What would you fix first?
+
+#SharedOwnership #Housing
 
 ---
 
-## Variant B: short and direct (revised 2026-10-29)
+## Variant B: short (rewritten 2026-10-29 in Floris's voice)
 
-After ten years frozen, the shared ownership income caps are rising to £90k outside London and £110k in London from the new year, and it's the right call.
+Ten years later, the Shared Ownership income caps are finally moving! 🏠
 
-The harder test for the sector is what happens after people move in: making it simple, quick and predictable for owners to buy more of their home or to sell it. That's the part we work on every day at Stairpay.
+From the new year, households can earn up to £90k outside London and £110k in London, up from £80k and £90k. It's a welcome change, and a long overdue one.
+
+The bigger question for the sector is what happens after people move in. With 75,000 Shared Ownership homes on Stairpay, we see how hard it still is to buy a bigger share or sell, and that's exactly what we're working to fix.
+
+#SharedOwnership #Housing
 
 ---
 

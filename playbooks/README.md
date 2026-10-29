@@ -47,6 +47,7 @@ Aim to publish in UK working-hour mornings. Move slots to match news. Review rea
 - [ ] No customer, partner or person named without written OK
 - [ ] No financial or legal advice; no promised outcomes
 - [ ] Reads like Floris (`voice/floris.md`); hook is in the first two lines
+- [ ] Hashtags: 0-3, specific (e.g. #SharedOwnership #Housing), at the end or one inline where it reads naturally; tagging people and organisations (with OK) matters more
 - [ ] Visual matches the brand kit; alt text written
 - [ ] Floris approved the exact final text
 
