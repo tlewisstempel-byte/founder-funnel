@@ -2,7 +2,7 @@
 
 Use this until the pipeline is built. Paste it into any LLM together with the files listed.
 
-**Attach or paste:** `voice/floris.md`, the latest files in `voice/edits/` (lessons from past edits), the playbook for the post type (`playbooks/<type>.md`), and the raw material (notes, transcript excerpt, data result, news link).
+**Attach or paste:** `voice/floris.md`, `voice/corpus/floris_examples.md` (his real posts), the latest files in `voice/edits/` (lessons from past edits), the playbook for the post type (`playbooks/<type>.md`), and the raw material (notes, transcript excerpt, data result, news link).
 
 ---
 

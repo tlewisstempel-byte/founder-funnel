@@ -16,7 +16,7 @@ Phase 0-1 (2026-10-28). Slack bot code is built and tested with simulated Slack 
 2. `ARCHITECTURE.md`: how the system fits together
 3. `playbooks/README.md`: weekly rhythm and the universal post SOP
 4. `playbooks/*.md`: one playbook per post type (template + SOP + team funnel)
-5. `voice/`: how Floris, the team and the company page sound
+5. `voice/`: how Floris, the team and the company page sound (`docs/VOICE_PROCESS.md` explains how the voice files are built)
 6. `brand/`: design tokens and logos for visuals
 7. `data/DATA_CONTRACT.md`: what we need from the SQL database (anonymised)
 8. `trends/watchlist.md`: who and what we monitor

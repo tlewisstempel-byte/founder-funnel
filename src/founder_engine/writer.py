@@ -35,6 +35,7 @@ def draft_post(llm: LLM, idea_text: str, post_type: str, recent_posts: list[str]
         [
             HOUSE_RULES,
             "## Voice file\n" + read_repo_file("voice/floris.md", root),
+            "## Real posts in his own voice (match this, don't copy it)\n" + read_repo_file("voice/corpus/floris_examples.md", root)[:12000],
             "## Lessons from past edits\n" + "\n\n".join(
                 f.read_text() for f in sorted((root / "voice" / "edits").glob("*.md"))[-4:]),
             f"## Playbook ({post_type})\n" + read_repo_file(f"playbooks/{post_type}.md", root),

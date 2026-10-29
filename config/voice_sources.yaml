@@ -1,0 +1,13 @@
+# How each past post is used when building Floris's voice. Decided by the owner, 2026-10-29.
+# Dates are the post date (YYYY-MM-DD) from the LinkedIn export.
+#   exclude:    ignore completely (strongly AI-written)
+#   info_only:  use facts and argument flow, NOT wording or tone (AI-assisted)
+#   everything else with text: use fully (his own voice)
+exclude:
+  - 2026-05-18   # lease extraction vs ChatGPT/Claude
+  - 2026-05-11   # new website and modules launch
+info_only:
+  - 2026-09-28   # equity loan / Help to Buy (text-only post; in Shares.csv)
+  - 2025-12-17   # "A little pinch me moment"
+  - 2026-02-25   # AI roundtable with nsg
+  - 2026-08-12   # "Any hockey fans out here?"
