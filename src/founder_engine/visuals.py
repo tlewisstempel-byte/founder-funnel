@@ -1,5 +1,5 @@
 """On-brand LinkedIn visuals rendered from real numbers: column chart, line chart,
-stat card, quote card. Output: 1080x1350 PNG (LinkedIn's 4:5 feed format) + alt text.
+stat card, quote card. Output: 4:5 PNG (LinkedIn's portrait feed format), laid out at 1080x1350 and rendered at 2x (2160x2700) for sharpness, + alt text.
 
 Charts are drawn as SVG here (exact numbers, exact labels: never an image model),
 placed in an HTML card using brand/tokens.json and Poppins, then screenshotted
@@ -216,8 +216,8 @@ h1{{font-size:56px;line-height:1.1;font-weight:700;letter-spacing:-0.025em;color
 .source{{font-size:24px;line-height:1.4;color:{t['neutral-500']};max-width:720px}}
 .logo svg{{height:44px;width:auto;display:block}}
 .stat{{font-size:200px;font-weight:700;letter-spacing:-0.04em;line-height:1;color:{t['iris-400']}}}
-.stat-label{{font-size:36px;font-weight:600;color:{t['iris-600']};text-align:center;margin-top:24px;max-width:760px;line-height:1.3}}
-.stat-context{{font-size:28px;color:{t['neutral-700']};text-align:center;margin-top:20px;max-width:760px;line-height:1.45}}
+.stat-label{{font-size:36px;font-weight:600;color:{t['iris-600']};text-align:center;margin-top:40px;max-width:780px;line-height:1.3;text-wrap:balance}}
+.stat-context{{font-size:28px;color:{t['neutral-700']};text-align:center;margin-top:36px;max-width:760px;line-height:1.5;text-wrap:balance}}
 .quote{{font-size:52px;font-weight:600;line-height:1.3;letter-spacing:-0.02em;color:#fff;padding:0 24px}}
 .quote:before{{content:"“";display:block;font-size:160px;line-height:0.8;color:{t['iris-300']}}}
 .who{{font-size:28px;color:{t['powder-200']};margin-top:40px;padding:0 24px}}
@@ -232,14 +232,17 @@ h1{{font-size:56px;line-height:1.1;font-weight:700;letter-spacing:-0.025em;color
 </div></body></html>"""
 
 
-def render_png(html_doc: str, out: Path) -> Path:
+SCALE = 2  # render at 2x (2160x2700): same 4:5 shape, sharp on high-resolution screens; LinkedIn limit is 8 MB
+
+
+def render_png(html_doc: str, out: Path, scale: int = SCALE) -> Path:
     from playwright.sync_api import sync_playwright
 
     out = Path(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=1)
+        page = browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=scale)
         page.set_content(html_doc, wait_until="load")
         page.evaluate("document.fonts.ready")
         page.screenshot(path=str(out), full_page=False)

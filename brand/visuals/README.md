@@ -1,6 +1,6 @@
 # On-brand visuals
 
-Charts and cards for Floris's posts, rendered by code from real numbers using `brand/tokens.json` and Poppins (`brand/fonts/`, open font licence). Output: 1080x1350 PNG (LinkedIn 4:5) plus alt text to paste into LinkedIn.
+Charts and cards for Floris's posts, rendered by code from real numbers using `brand/tokens.json` and Poppins (`brand/fonts/`, open font licence). Output: 4:5 portrait PNG (LinkedIn's tallest feed format), laid out at 1080x1350 and rendered at 2x (2160x2700) so text stays sharp; plus alt text to paste into LinkedIn.
 
 ```bash
 founder-engine visual brand/visuals/examples/column-growth.yaml out.png
