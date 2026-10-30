@@ -26,7 +26,8 @@ Phase 0-1 (2026-10-28). Slack bot code is built and tested with simulated Slack 
 11. `sessions/`: handoff notes; read the latest three
 12. `meetings/` (weekly Floris meeting kit), `team/` (intake for Tim and Sinead, one-pager for Floris), `brand/visuals/` (chart and card generator)
 13. `docs/WORKFLOW.md`, `docs/TECH_STACK.md` (diagrams), `docs/NOTION.md`, `mockups/` (Slack and Notion mock-ups)
-14. `docs/SLACK_BOT.md`: the Slack bot (what it does, setup, code map); code in `src/founder_engine/`, tests in `tests/`
+14. `docs/AGENT_PA_BRIEF.md`: one-page brief for the owner's PA agent
+15. `docs/SLACK_BOT.md`: the Slack bot (what it does, setup, code map); code in `src/founder_engine/`, tests in `tests/`
 
 ## Hard rules (never break these)
 
